@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "MasterCell.h"
+#import "Album.h"
 
 @interface MasterViewController ()
 
@@ -50,18 +51,18 @@
     
     // don't display extra cells/separators
     //[self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
-    self.tableView.tableFooterView = [UIView new];
     
     self.view.backgroundColor = [UIColor blackColor]; //"#145b7c"
+
     
     // init vars for table cells
-    self.albumYear = @[@"2016", @"2015", @"2014", @"2013", @"2012"];
-    self.albumTitle = @[@"Slow", @"The Bird's Heart", @"Valentine Vignettes", @"Pipes and Dreams", @"Awake Too Early"];
-    self.imageFilename = @[@"slow.jpg", @"birdsheart.jpg", @"valentinevignettes.jpg", @"pipesanddreams.jpg", @"awaketooearly.jpg"];
-    
-    // create an audio player
-    self.audioName = @[@"slow-01", @"slow-02", @"slow-03", @"slow-04", @"slow-05", @"slow-06", @"slow-07", @"slow-08", @"slow-09"];
-    
+    Album *slow = [[Album alloc] initWithTitle:@"Slow" year:@"2016" filenameWithoutExtension:@"slow"];
+    Album *birdsheart = [[Album alloc] initWithTitle:@"The Bird's Heart" year:@"2015" filenameWithoutExtension:@"birdsheart"];
+    Album *valentinevignettes = [[Album alloc] initWithTitle:@"Valentine Vignettes" year:@"2014" filenameWithoutExtension:@"valentinevignettes"];
+    Album *pipesanddreams = [[Album alloc] initWithTitle:@"Pipes and Dreams" year:@"2013" filenameWithoutExtension:@"pipesanddreams"];
+    Album *awaketooearly = [[Album alloc] initWithTitle:@"Awake Too Early" year:@"2012" filenameWithoutExtension:@"awaketooearly"];
+    self.albums = @[ slow, birdsheart, valentinevignettes, pipesanddreams, awaketooearly ];
+
     self.currentTrack = 0;
 
 }
@@ -90,11 +91,12 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
-        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        [controller setDetailItem:object];
-        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        controller.navigationItem.leftItemsSupplementBackButton = YES;
+        
+        Album *album = self.albums[indexPath.row];
+        DetailViewController *detailController = (DetailViewController *)[[segue destinationViewController] topViewController];
+        [detailController setDetailItem:album];
+        detailController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+        detailController.navigationItem.leftItemsSupplementBackButton = YES;
     }
 }
 
@@ -105,17 +107,18 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.albumTitle count];
+    return [self.albums count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MasterCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    MasterCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MasterCell_ID" forIndexPath:indexPath];
     
     // Configure the cell...
-    NSInteger row = indexPath.row;
-    cell.littleText.text = self.albumTitle[row];
-    cell.bigText.text = self.albumYear[row];
-    cell.imageView.image = [UIImage imageNamed:self.imageFilename[row]];
+    Album *album = self.albums[indexPath.row];
+
+    cell.littleText.text = album.title;
+    cell.bigText.text = album.year;
+    cell.imageview.image = [UIImage imageNamed:album.filenameFor100image];
     
     return cell;
 }
@@ -135,14 +138,8 @@
 }
 
 
-
-
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
-    self.currentTrack++;
-    if (self.currentTrack < self.audioName.count) {
-        // play the next track
-        [self playFile:self.audioName[self.currentTrack]];
-    }
+    // play next track -- TODO: create a player class, instantiate the player, and have the player keep track of what album and track it's currently playing (and then increment its current track internally to the player -- this will help avoid global state).
 }
 
 @end

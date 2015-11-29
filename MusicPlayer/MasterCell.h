@@ -10,8 +10,8 @@
 
 @interface MasterCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *bigText;
 @property (weak, nonatomic) IBOutlet UILabel *littleText;
+@property (weak, nonatomic) IBOutlet UIImageView *imageview;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "Album.h"
 
 @interface DetailViewController ()
 
@@ -19,16 +20,20 @@
 - (void)setDetailItem:(id)newDetailItem {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
-            
-        // Update the view.
-        [self configureView];
+        
+        // Update the view
+        //[self configureView];
     }
 }
 
 - (void)configureView {
     // Update the user interface for the detail item.
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+    Album *album = self.detailItem;
+    if (album) {
+        NSString *newTitle = [album description];
+        [self setTitle:newTitle];
+        
+        self.imageview.image = [UIImage imageNamed:album.filenameFor375image];
     }
 }
 

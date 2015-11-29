@@ -15,11 +15,7 @@
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
-
-@property (copy, nonatomic) NSArray *albumYear;
-@property (copy, nonatomic) NSArray *albumTitle;
-@property (copy, nonatomic) NSArray *imageFilename;
-@property (copy, nonatomic) NSArray *audioName;
+@property (copy, nonatomic) NSArray *albums;
 @property (nonatomic) NSUInteger currentTrack;
 
 @property (retain, nonatomic) AVAudioPlayer *player;

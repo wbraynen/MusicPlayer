@@ -25,12 +25,18 @@
 		BE8E56301C0AD8920076CECA /* slow-07.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56271C0AD8920076CECA /* slow-07.mp3 */; };
 		BE8E56311C0AD8920076CECA /* slow-08.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56281C0AD8920076CECA /* slow-08.mp3 */; };
 		BE8E56321C0AD8920076CECA /* slow-09.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56291C0AD8920076CECA /* slow-09.mp3 */; };
-		BE8E56381C0AD8E30076CECA /* awaketooearly.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56331C0AD8E30076CECA /* awaketooearly.jpg */; };
-		BE8E56391C0AD8E30076CECA /* birdsheart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56341C0AD8E30076CECA /* birdsheart.jpg */; };
-		BE8E563A1C0AD8E30076CECA /* pipesanddreams.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56351C0AD8E30076CECA /* pipesanddreams.jpg */; };
-		BE8E563B1C0AD8E30076CECA /* slow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56361C0AD8E30076CECA /* slow.jpg */; };
-		BE8E563C1C0AD8E30076CECA /* valentinevignettes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56371C0AD8E30076CECA /* valentinevignettes.jpg */; };
+		BE8E56381C0AD8E30076CECA /* awaketooearly.100.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56331C0AD8E30076CECA /* awaketooearly.100.jpg */; };
+		BE8E56391C0AD8E30076CECA /* birdsheart.100.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56341C0AD8E30076CECA /* birdsheart.100.jpg */; };
+		BE8E563A1C0AD8E30076CECA /* pipesanddreams.100.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56351C0AD8E30076CECA /* pipesanddreams.100.jpg */; };
+		BE8E563B1C0AD8E30076CECA /* slow.100.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56361C0AD8E30076CECA /* slow.100.jpg */; };
+		BE8E563C1C0AD8E30076CECA /* valentinevignettes.100.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56371C0AD8E30076CECA /* valentinevignettes.100.jpg */; };
 		BE8E563F1C0AD9130076CECA /* MasterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8E563E1C0AD9130076CECA /* MasterCell.m */; };
+		BE8E56471C0B5A6D0076CECA /* awaketooearly.375.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56421C0B5A6D0076CECA /* awaketooearly.375.jpg */; };
+		BE8E56481C0B5A6D0076CECA /* birdsheart.375.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56431C0B5A6D0076CECA /* birdsheart.375.jpg */; };
+		BE8E56491C0B5A6D0076CECA /* pipesanddreams.375.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56441C0B5A6D0076CECA /* pipesanddreams.375.jpg */; };
+		BE8E564A1C0B5A6D0076CECA /* slow.375.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56451C0B5A6D0076CECA /* slow.375.jpg */; };
+		BE8E564B1C0B5A6D0076CECA /* valentinevignettes.375.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56461C0B5A6D0076CECA /* valentinevignettes.375.jpg */; };
+		BE8E564F1C0B65910076CECA /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8E564E1C0B65910076CECA /* Album.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,13 +84,20 @@
 		BE8E56271C0AD8920076CECA /* slow-07.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "slow-07.mp3"; sourceTree = "<group>"; };
 		BE8E56281C0AD8920076CECA /* slow-08.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "slow-08.mp3"; sourceTree = "<group>"; };
 		BE8E56291C0AD8920076CECA /* slow-09.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "slow-09.mp3"; sourceTree = "<group>"; };
-		BE8E56331C0AD8E30076CECA /* awaketooearly.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = awaketooearly.jpg; sourceTree = "<group>"; };
-		BE8E56341C0AD8E30076CECA /* birdsheart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = birdsheart.jpg; sourceTree = "<group>"; };
-		BE8E56351C0AD8E30076CECA /* pipesanddreams.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pipesanddreams.jpg; sourceTree = "<group>"; };
-		BE8E56361C0AD8E30076CECA /* slow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = slow.jpg; sourceTree = "<group>"; };
-		BE8E56371C0AD8E30076CECA /* valentinevignettes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = valentinevignettes.jpg; sourceTree = "<group>"; };
+		BE8E56331C0AD8E30076CECA /* awaketooearly.100.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = awaketooearly.100.jpg; sourceTree = "<group>"; };
+		BE8E56341C0AD8E30076CECA /* birdsheart.100.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = birdsheart.100.jpg; sourceTree = "<group>"; };
+		BE8E56351C0AD8E30076CECA /* pipesanddreams.100.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pipesanddreams.100.jpg; sourceTree = "<group>"; };
+		BE8E56361C0AD8E30076CECA /* slow.100.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = slow.100.jpg; sourceTree = "<group>"; };
+		BE8E56371C0AD8E30076CECA /* valentinevignettes.100.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = valentinevignettes.100.jpg; sourceTree = "<group>"; };
 		BE8E563D1C0AD9130076CECA /* MasterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterCell.h; sourceTree = "<group>"; };
 		BE8E563E1C0AD9130076CECA /* MasterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterCell.m; sourceTree = "<group>"; };
+		BE8E56421C0B5A6D0076CECA /* awaketooearly.375.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = awaketooearly.375.jpg; sourceTree = "<group>"; };
+		BE8E56431C0B5A6D0076CECA /* birdsheart.375.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = birdsheart.375.jpg; sourceTree = "<group>"; };
+		BE8E56441C0B5A6D0076CECA /* pipesanddreams.375.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pipesanddreams.375.jpg; sourceTree = "<group>"; };
+		BE8E56451C0B5A6D0076CECA /* slow.375.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = slow.375.jpg; sourceTree = "<group>"; };
+		BE8E56461C0B5A6D0076CECA /* valentinevignettes.375.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = valentinevignettes.375.jpg; sourceTree = "<group>"; };
+		BE8E564D1C0B65910076CECA /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		BE8E564E1C0B65910076CECA /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +157,8 @@
 				BE8E55F71C0AD85D0076CECA /* LaunchScreen.storyboard */,
 				BE8E55FA1C0AD85D0076CECA /* Info.plist */,
 				BE8E55E61C0AD85D0076CECA /* Supporting Files */,
+				BE8E564D1C0B65910076CECA /* Album.h */,
+				BE8E564E1C0B65910076CECA /* Album.m */,
 			);
 			path = MusicPlayer;
 			sourceTree = "<group>";
@@ -199,11 +214,8 @@
 		BE8E561E1C0AD87C0076CECA /* images */ = {
 			isa = PBXGroup;
 			children = (
-				BE8E56331C0AD8E30076CECA /* awaketooearly.jpg */,
-				BE8E56341C0AD8E30076CECA /* birdsheart.jpg */,
-				BE8E56351C0AD8E30076CECA /* pipesanddreams.jpg */,
-				BE8E56361C0AD8E30076CECA /* slow.jpg */,
-				BE8E56371C0AD8E30076CECA /* valentinevignettes.jpg */,
+				BE8E564C1C0B5A720076CECA /* 375x375 */,
+				BE8E56411C0B5A5B0076CECA /* 100x100 */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -230,6 +242,30 @@
 				BE8E56291C0AD8920076CECA /* slow-09.mp3 */,
 			);
 			name = slow;
+			sourceTree = "<group>";
+		};
+		BE8E56411C0B5A5B0076CECA /* 100x100 */ = {
+			isa = PBXGroup;
+			children = (
+				BE8E56331C0AD8E30076CECA /* awaketooearly.100.jpg */,
+				BE8E56341C0AD8E30076CECA /* birdsheart.100.jpg */,
+				BE8E56351C0AD8E30076CECA /* pipesanddreams.100.jpg */,
+				BE8E56361C0AD8E30076CECA /* slow.100.jpg */,
+				BE8E56371C0AD8E30076CECA /* valentinevignettes.100.jpg */,
+			);
+			name = 100x100;
+			sourceTree = "<group>";
+		};
+		BE8E564C1C0B5A720076CECA /* 375x375 */ = {
+			isa = PBXGroup;
+			children = (
+				BE8E56421C0B5A6D0076CECA /* awaketooearly.375.jpg */,
+				BE8E56431C0B5A6D0076CECA /* birdsheart.375.jpg */,
+				BE8E56441C0B5A6D0076CECA /* pipesanddreams.375.jpg */,
+				BE8E56451C0B5A6D0076CECA /* slow.375.jpg */,
+				BE8E56461C0B5A6D0076CECA /* valentinevignettes.375.jpg */,
+			);
+			name = 375x375;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,20 +373,25 @@
 			files = (
 				BE8E55F91C0AD85D0076CECA /* LaunchScreen.storyboard in Resources */,
 				BE8E562B1C0AD8920076CECA /* slow-02.mp3 in Resources */,
-				BE8E563C1C0AD8E30076CECA /* valentinevignettes.jpg in Resources */,
-				BE8E563A1C0AD8E30076CECA /* pipesanddreams.jpg in Resources */,
+				BE8E563C1C0AD8E30076CECA /* valentinevignettes.100.jpg in Resources */,
+				BE8E563A1C0AD8E30076CECA /* pipesanddreams.100.jpg in Resources */,
 				BE8E56321C0AD8920076CECA /* slow-09.mp3 in Resources */,
 				BE8E56301C0AD8920076CECA /* slow-07.mp3 in Resources */,
+				BE8E564B1C0B5A6D0076CECA /* valentinevignettes.375.jpg in Resources */,
 				BE8E55F61C0AD85D0076CECA /* Assets.xcassets in Resources */,
-				BE8E56391C0AD8E30076CECA /* birdsheart.jpg in Resources */,
-				BE8E56381C0AD8E30076CECA /* awaketooearly.jpg in Resources */,
+				BE8E56491C0B5A6D0076CECA /* pipesanddreams.375.jpg in Resources */,
+				BE8E56391C0AD8E30076CECA /* birdsheart.100.jpg in Resources */,
+				BE8E56381C0AD8E30076CECA /* awaketooearly.100.jpg in Resources */,
 				BE8E562D1C0AD8920076CECA /* slow-04.mp3 in Resources */,
+				BE8E56471C0B5A6D0076CECA /* awaketooearly.375.jpg in Resources */,
 				BE8E562C1C0AD8920076CECA /* slow-03.mp3 in Resources */,
 				BE8E562A1C0AD8920076CECA /* slow-01.mp3 in Resources */,
 				BE8E562E1C0AD8920076CECA /* slow-05.mp3 in Resources */,
-				BE8E563B1C0AD8E30076CECA /* slow.jpg in Resources */,
+				BE8E563B1C0AD8E30076CECA /* slow.100.jpg in Resources */,
 				BE8E56311C0AD8920076CECA /* slow-08.mp3 in Resources */,
+				BE8E564A1C0B5A6D0076CECA /* slow.375.jpg in Resources */,
 				BE8E55F41C0AD85D0076CECA /* Main.storyboard in Resources */,
+				BE8E56481C0B5A6D0076CECA /* birdsheart.375.jpg in Resources */,
 				BE8E562F1C0AD8920076CECA /* slow-06.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +420,7 @@
 				BE8E563F1C0AD9130076CECA /* MasterCell.m in Sources */,
 				BE8E55EB1C0AD85D0076CECA /* AppDelegate.m in Sources */,
 				BE8E55EE1C0AD85D0076CECA /* MasterViewController.m in Sources */,
+				BE8E564F1C0B65910076CECA /* Album.m in Sources */,
 				BE8E55E81C0AD85D0076CECA /* main.m in Sources */,
 				BE8E55F11C0AD85D0076CECA /* DetailViewController.m in Sources */,
 			);
@@ -606,6 +648,7 @@
 				BE8E56151C0AD85D0076CECA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE8E56161C0AD85D0076CECA /* Build configuration list for PBXNativeTarget "MusicPlayerTests" */ = {
 			isa = XCConfigurationList;
@@ -614,6 +657,7 @@
 				BE8E56181C0AD85D0076CECA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE8E56191C0AD85D0076CECA /* Build configuration list for PBXNativeTarget "MusicPlayerUITests" */ = {
 			isa = XCConfigurationList;
@@ -622,6 +666,7 @@
 				BE8E561B1C0AD85D0076CECA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
