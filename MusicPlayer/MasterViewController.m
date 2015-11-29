@@ -48,6 +48,9 @@
     self.navigationItem.rightBarButtonItem = nil;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
+    // don't display extra cells/separators
+    //[self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
+    self.tableView.tableFooterView = [UIView new];
     
     self.view.backgroundColor = [UIColor blackColor]; //"#145b7c"
     
