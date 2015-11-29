@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "MasterCell.h"
 
 @interface MasterViewController ()
 
@@ -16,14 +17,50 @@
 
 @implementation MasterViewController
 
+@synthesize player;
+
+- (void)playFile:(NSString *)filename {
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *path = [bundle pathForResource:filename ofType:@"mp3"];
+    
+    if (path != nil) {
+        AVAudioPlayer *newPlayer;
+        NSURL *url = [NSURL fileURLWithPath:path];
+        newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url
+                                                           error:NULL];
+        [self setPlayer:newPlayer];
+        
+        [newPlayer prepareToPlay];
+        [newPlayer play];
+    }
+}
+
+
+
+- (void)dealloc {
+    self.player = nil;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.rightBarButtonItem = nil;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    
+    self.view.backgroundColor = [UIColor blackColor]; //"#145b7c"
+    
+    // init vars for table cells
+    self.albumYear = @[@"2016", @"2015", @"2014", @"2013", @"2012"];
+    self.albumTitle = @[@"Slow", @"The Bird's Heart", @"Valentine Vignettes", @"Pipes and Dreams", @"Awake Too Early"];
+    self.imageFilename = @[@"slow.jpg", @"birdsheart.jpg", @"valentinevignettes.jpg", @"pipesanddreams.jpg", @"awaketooearly.jpg"];
+    
+    // create an audio player
+    self.audioName = @[@"slow-01", @"slow-02", @"slow-03", @"slow-04", @"slow-05", @"slow-06", @"slow-07", @"slow-08", @"slow-09"];
+    
+    self.currentTrack = 0;
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -65,14 +102,18 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.objects.count;
+    return [self.albumTitle count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = self.objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    MasterCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    // Configure the cell...
+    NSInteger row = indexPath.row;
+    cell.littleText.text = self.albumTitle[row];
+    cell.bigText.text = self.albumYear[row];
+    cell.imageView.image = [UIImage imageNamed:self.imageFilename[row]];
+    
     return cell;
 }
 
@@ -87,6 +128,17 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    }
+}
+
+
+
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    self.currentTrack++;
+    if (self.currentTrack < self.audioName.count) {
+        // play the next track
+        [self playFile:self.audioName[self.currentTrack]];
     }
 }
 
