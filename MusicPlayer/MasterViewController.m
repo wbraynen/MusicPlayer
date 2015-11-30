@@ -89,7 +89,7 @@
 
     cell.littleText.text = album.title;
     cell.bigText.text = album.year;
-    cell.imageview.image = [UIImage imageNamed:album.filenameFor100image];
+    cell.imageview.image = [UIImage imageNamed:album.filenameFor375image]; // TODO: this should really read `filenameFor100image`
     
     return cell;
 }
