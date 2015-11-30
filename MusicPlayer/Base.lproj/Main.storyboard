@@ -53,34 +53,35 @@
                                 </prototypes>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JvI-oq-3LA">
-                                <rect key="frame" x="42" y="72" width="300" height="300"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="300"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JvI-oq-3LA" secondAttribute="height" multiplier="1:1" id="Bha-Cx-FF7"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPo-NZ-fVL">
-                                <rect key="frame" x="142" y="165" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JG-cN-uA6">
+                                <rect key="frame" x="137" y="210" width="100" height="93"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="HPo-NZ-fVL" secondAttribute="height" multiplier="1:1" id="Go8-l6-pIj"/>
-                                </constraints>
                                 <state key="normal" image="play.png"/>
+                                <connections>
+                                    <action selector="playButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="ggd-Xy-ghf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HPo-NZ-fVL" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="Cqu-aj-hv0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JvI-oq-3LA" secondAttribute="trailing" id="GVD-w5-LHR"/>
                             <constraint firstItem="JvI-oq-3LA" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="JLO-Cu-L0y"/>
                             <constraint firstItem="JvI-oq-3LA" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="PHW-wj-Hqp"/>
+                            <constraint firstItem="8JG-cN-uA6" firstAttribute="centerX" secondItem="JvI-oq-3LA" secondAttribute="centerX" id="VxN-ap-zT8"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="imageview" destination="JvI-oq-3LA" id="Rzk-iR-VHy"/>
+                        <outlet property="playButton" destination="8JG-cN-uA6" id="v7K-gz-RnL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>

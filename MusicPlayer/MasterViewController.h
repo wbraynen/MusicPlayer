@@ -7,20 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-@import AVFoundation;
 
 @class DetailViewController;
+@class Player;
 
-@interface MasterViewController : UITableViewController<UITableViewDelegate, AVAudioPlayerDelegate>
+@interface MasterViewController : UITableViewController<UITableViewDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
-
-@property (copy, nonatomic) NSArray *albums;
-@property (nonatomic) NSUInteger currentTrack;
-
-@property (retain, nonatomic) AVAudioPlayer *player;
-- (void)playFile:(NSString *)filename;
-
+@property (strong, nonatomic) Player *player;
 
 @end
 

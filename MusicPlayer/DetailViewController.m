@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "Album.h"
+#import "Player.h"
 
 @interface DetailViewController ()
 
@@ -34,6 +35,7 @@
         [self setTitle:newTitle];
         
         self.imageview.image = [UIImage imageNamed:album.filenameFor1400image];
+        self.isPaused = NO;
     }
 }
 
@@ -46,6 +48,28 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void)changePlayButtonToPausedState {
+    UIImage *newButtonImage = [UIImage imageNamed:@"play.png"]; // I shouldn't be creating an image every time; this should be a property... if I only understood properties well enough...
+    [self.playButton setImage:newButtonImage forState:UIControlStateNormal];
+}
+
+- (void)changePlayButtonToPlayState {
+    UIImage *newButtonImage = [UIImage imageNamed:@"pause.png"]; // I shouldn't be creating an image every time; this should be a property... if I only understood properties well enough...
+    [self.playButton setImage:newButtonImage forState:UIControlStateNormal];
+}
+
+- (IBAction)playButtonPressed:(UIButton *)sender {
+    if (NO == self.isPaused) {
+        [self changePlayButtonToPlayState];
+        [self.player play];
+    } else { // if (YES == self.isPaused)
+        [self changePlayButtonToPausedState];
+        [self.player pause];
+    }
+    self.isPaused = !self.isPaused;
 }
 
 @end
