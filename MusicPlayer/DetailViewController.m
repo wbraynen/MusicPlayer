@@ -9,6 +9,8 @@
 #import "DetailViewController.h"
 #import "Album.h"
 #import "Player.h"
+#import <Foundation/Foundation.h> // for NSAssert
+#import "UIColor+MyColors.h"
 
 @interface DetailViewController ()
 
@@ -71,5 +73,34 @@
     }
     self.isPaused = !self.isPaused;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    Album *album = self.player.currentAlbum;
+    if (album) {
+        return album.tracks.count;
+    } else {
+        NSAssert(album, @"The player has no currentAlbum set.");
+        return 0;
+    }
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrackCell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]
+                initWithStyle:UITableViewCellStyleDefault
+                reuseIdentifier:@"Cell"];
+    }
+    
+    // Configure the cell.
+    cell.backgroundColor = [UIColor outerSpaceColor];
+    cell.textLabel.textColor = [UIColor aliceBlueColor];
+    cell.textLabel.text = self.player.currentAlbum.tracks[indexPath.row];
+    return cell;
+    
+//    [self.player playTrack:indexPath.row];
+    
+}
+
 
 @end

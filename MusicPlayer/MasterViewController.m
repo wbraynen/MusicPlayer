@@ -59,15 +59,20 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        [self.player setCurrentAlbumByIndex:indexPath.row];
-        Album *album = [self.player getCurrentAlbum];
-        if (album) {
-            DetailViewController *detailController = (DetailViewController *)[[segue destinationViewController] topViewController];
-            detailController.player = self.player;
-            [detailController setDetailItem:album];
-            detailController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-            detailController.navigationItem.leftItemsSupplementBackButton = YES;
+        if (indexPath.row < AVAILABLEALBUMS_COUNT) {
+            [self.player setCurrentAlbumByIndex:indexPath.row];
         }
+
+        DetailViewController *detailController = (DetailViewController *)[[segue destinationViewController] topViewController];
+        detailController.player = self.player;
+        Album *album = self.player.currentAlbum;
+        if (album) {
+            [detailController setDetailItem:album];
+        }
+    
+        detailController.player = self.player;
+        detailController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+        detailController.navigationItem.leftItemsSupplementBackButton = YES;
     }
 }
 

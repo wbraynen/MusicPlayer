@@ -23,10 +23,21 @@
 - (void)playFile:(NSString *)filename;
 - (NSUInteger)getTotalAlbums;
 
-- (Album *)getCurrentAlbum;
-- (void)setCurrentAlbumByIndex:(NSUInteger)index; // 0 <= index < albums.count, unless there is no current album
+
+typedef enum {
+    AVAILABLEALBUM_SLOW,
+    AVAILABLEALBUM_BIRDSHEART,
+    ALBUM_VALENTINEVIGNETTES,
+    AVAILABLEALBUM_PIPESANDDREAMS,
+    AVAILABLEALBUM_AWAKETOOEARLY,
+    AVAILABLEALBUMS_COUNT
+} AvailableAlbums;
+
+- (void)setCurrentAlbumByIndex:(AvailableAlbums)album;
 
 - (void)play;
 - (void)pause;
+
+- (void)playTrack:(NSUInteger)trackIndex;
 
 @end

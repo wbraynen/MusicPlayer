@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Player.h"
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 
 @property (strong, nonatomic) id detailItem;
@@ -20,5 +20,6 @@
 
 @property (readwrite) BOOL isPaused;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 @end

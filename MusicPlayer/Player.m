@@ -15,12 +15,14 @@
 
 
 - (instancetype)init {
+    
     // init vars for table cells
-    Album *slow = [[Album alloc] initWithTitle:@"Slow" year:@"2016" filenameBase:@"slow" totalTracks:9];
-    Album *birdsheart = [[Album alloc] initWithTitle:@"The Bird's Heart" year:@"2015" filenameBase:@"birdsheart" totalTracks:14];
-    Album *valentinevignettes = [[Album alloc] initWithTitle:@"Valentine Vignettes" year:@"2014" filenameBase:@"valentinevignettes" totalTracks:7];
-    Album *pipesanddreams = [[Album alloc] initWithTitle:@"Pipes and Dreams" year:@"2013" filenameBase:@"pipesanddreams" totalTracks:8];
-    Album *awaketooearly = [[Album alloc] initWithTitle:@"Awake Too Early" year:@"2012" filenameBase:@"awaketooearly" totalTracks:9];
+    Album *slow = [[Album alloc] initWithTitle:@"Slow" year:@"2016" filenameBase:@"slow"];
+    
+    Album *birdsheart = [[Album alloc] initWithTitle:@"The Bird's Heart" year:@"2015" filenameBase:@"birdsheart"];
+    Album *valentinevignettes = [[Album alloc] initWithTitle:@"Valentine Vignettes" year:@"2014" filenameBase:@"valentinevignettes"];
+    Album *pipesanddreams = [[Album alloc] initWithTitle:@"Pipes and Dreams" year:@"2013" filenameBase:@"pipesanddreams"];
+    Album *awaketooearly = [[Album alloc] initWithTitle:@"Awake Too Early" year:@"2012" filenameBase:@"awaketooearly"];
     self.albums = @[ slow, birdsheart, valentinevignettes, pipesanddreams, awaketooearly ];
     
     return self;
@@ -47,22 +49,10 @@
 }
 
 
-- (Album *)getCurrentAlbum {
-    return self.currentAlbum;
+- (void)setCurrentAlbumByIndex:(AvailableAlbums)albumIndex {
+    Album *album = self.albums[albumIndex];
+    self.currentAlbum = album;
 }
-
-/**
- * Preq: 0 <= index < albums.count
- * Otherwise, no biggy: next time you call `getCurrentAlbum`, it will simply return nil
- */
-- (void)setCurrentAlbumByIndex:(NSUInteger)index {
-    if (index < self.albums.count) {
-        self.currentAlbum = self.albums[index];
-    } else {
-        self.currentAlbum = nil;
-    }
-}
-
 
 
 - (void)pause {
@@ -70,13 +60,12 @@
 }
 
 - (void)play {
-    Album *album = [self getCurrentAlbum];
-    NSString *filename = [album getAudioFilenameForTrackWithoutExtension:self.currentTrack];
+    NSString *filename = [self.currentAlbum getAudioFilenameForTrackWithoutExtension:self.currentTrack];
     [self playFile:filename];
 }
 
 - (void)playNextTrack {
-    if (self.currentTrack < self.currentAlbum.totalTracks - 1) {
+    if (self.currentTrack < self.currentAlbum.tracks.count - 1) {
         self.currentTrack++;
         // call playFile
     }
