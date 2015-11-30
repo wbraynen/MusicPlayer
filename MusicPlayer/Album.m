@@ -15,6 +15,7 @@
     _year = year;
     _filenameFor100image = [filenameWithoutExtension stringByAppendingString:@".100.jpg"];
     _filenameFor375image = [filenameWithoutExtension stringByAppendingString:@".375.jpg"];
+    _filenameFor1400image = [filenameWithoutExtension stringByAppendingString:@".1400.jpg"];
     return self;
 }
 

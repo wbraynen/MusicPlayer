@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -50,28 +52,30 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPo-NZ-fVL">
-                                <rect key="frame" x="177" y="370" width="30" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JvI-oq-3LA">
+                                <rect key="frame" x="42" y="72" width="300" height="300"/>
                                 <animations/>
-                                <state key="normal" title="&gt;"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUw-N2-5lg">
-                                <rect key="frame" x="251" y="370" width="30" height="30"/>
-                                <animations/>
-                                <state key="normal" title="&gt;|"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQc-NT-6J6">
-                                <rect key="frame" x="97" y="370" width="30" height="30"/>
-                                <animations/>
-                                <state key="normal" title="|&lt;"/>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JvI-oq-3LA">
-                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
-                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JvI-oq-3LA" secondAttribute="height" multiplier="1:1" id="Bha-Cx-FF7"/>
+                                </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPo-NZ-fVL">
+                                <rect key="frame" x="142" y="165" width="100" height="100"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HPo-NZ-fVL" secondAttribute="height" multiplier="1:1" id="Go8-l6-pIj"/>
+                                </constraints>
+                                <state key="normal" image="play.png"/>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HPo-NZ-fVL" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="Cqu-aj-hv0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JvI-oq-3LA" secondAttribute="trailing" id="GVD-w5-LHR"/>
+                            <constraint firstItem="JvI-oq-3LA" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="JLO-Cu-L0y"/>
+                            <constraint firstItem="JvI-oq-3LA" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="PHW-wj-Hqp"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
@@ -177,6 +181,9 @@
             <point key="canvasLocation" x="-303.5" y="60.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play.png" width="100" height="93"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>

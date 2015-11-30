@@ -37,6 +37,15 @@
 		BE8E564A1C0B5A6D0076CECA /* slow.375.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56451C0B5A6D0076CECA /* slow.375.jpg */; };
 		BE8E564B1C0B5A6D0076CECA /* valentinevignettes.375.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56461C0B5A6D0076CECA /* valentinevignettes.375.jpg */; };
 		BE8E564F1C0B65910076CECA /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8E564E1C0B65910076CECA /* Album.m */; };
+		BE8E56621C0BD22B0076CECA /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8E565E1C0BD22B0076CECA /* next.png */; };
+		BE8E56631C0BD22B0076CECA /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8E565F1C0BD22B0076CECA /* pause.png */; };
+		BE8E56641C0BD22B0076CECA /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56601C0BD22B0076CECA /* play.png */; };
+		BE8E56651C0BD22B0076CECA /* previous.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56611C0BD22B0076CECA /* previous.png */; };
+		BE8E566B1C0BF6B80076CECA /* awaketooearly.1400.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56661C0BF6B80076CECA /* awaketooearly.1400.jpg */; };
+		BE8E566C1C0BF6B80076CECA /* birdsheart.1400.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56671C0BF6B80076CECA /* birdsheart.1400.jpg */; };
+		BE8E566D1C0BF6B80076CECA /* slow.1400.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56681C0BF6B80076CECA /* slow.1400.jpg */; };
+		BE8E566E1C0BF6B80076CECA /* valentinevignettes.1400.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E56691C0BF6B80076CECA /* valentinevignettes.1400.jpg */; };
+		BE8E566F1C0BF6B80076CECA /* pipesanddreams.1400.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE8E566A1C0BF6B80076CECA /* pipesanddreams.1400.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +107,15 @@
 		BE8E56461C0B5A6D0076CECA /* valentinevignettes.375.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = valentinevignettes.375.jpg; sourceTree = "<group>"; };
 		BE8E564D1C0B65910076CECA /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
 		BE8E564E1C0B65910076CECA /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		BE8E565E1C0BD22B0076CECA /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		BE8E565F1C0BD22B0076CECA /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		BE8E56601C0BD22B0076CECA /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		BE8E56611C0BD22B0076CECA /* previous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = previous.png; sourceTree = "<group>"; };
+		BE8E56661C0BF6B80076CECA /* awaketooearly.1400.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = awaketooearly.1400.jpg; sourceTree = "<group>"; };
+		BE8E56671C0BF6B80076CECA /* birdsheart.1400.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = birdsheart.1400.jpg; sourceTree = "<group>"; };
+		BE8E56681C0BF6B80076CECA /* slow.1400.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = slow.1400.jpg; sourceTree = "<group>"; };
+		BE8E56691C0BF6B80076CECA /* valentinevignettes.1400.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = valentinevignettes.1400.jpg; sourceTree = "<group>"; };
+		BE8E566A1C0BF6B80076CECA /* pipesanddreams.1400.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pipesanddreams.1400.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,8 +232,13 @@
 		BE8E561E1C0AD87C0076CECA /* images */ = {
 			isa = PBXGroup;
 			children = (
-				BE8E564C1C0B5A720076CECA /* 375x375 */,
-				BE8E56411C0B5A5B0076CECA /* 100x100 */,
+				BE8E56411C0B5A5B0076CECA /* 100x100 album covers */,
+				BE8E564C1C0B5A720076CECA /* 375x375 album covers */,
+				BE8E56701C0BF6C00076CECA /* 1400x1400 album covers */,
+				BE8E565E1C0BD22B0076CECA /* next.png */,
+				BE8E565F1C0BD22B0076CECA /* pause.png */,
+				BE8E56601C0BD22B0076CECA /* play.png */,
+				BE8E56611C0BD22B0076CECA /* previous.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -244,7 +267,7 @@
 			name = slow;
 			sourceTree = "<group>";
 		};
-		BE8E56411C0B5A5B0076CECA /* 100x100 */ = {
+		BE8E56411C0B5A5B0076CECA /* 100x100 album covers */ = {
 			isa = PBXGroup;
 			children = (
 				BE8E56331C0AD8E30076CECA /* awaketooearly.100.jpg */,
@@ -253,10 +276,10 @@
 				BE8E56361C0AD8E30076CECA /* slow.100.jpg */,
 				BE8E56371C0AD8E30076CECA /* valentinevignettes.100.jpg */,
 			);
-			name = 100x100;
+			name = "100x100 album covers";
 			sourceTree = "<group>";
 		};
-		BE8E564C1C0B5A720076CECA /* 375x375 */ = {
+		BE8E564C1C0B5A720076CECA /* 375x375 album covers */ = {
 			isa = PBXGroup;
 			children = (
 				BE8E56421C0B5A6D0076CECA /* awaketooearly.375.jpg */,
@@ -265,7 +288,19 @@
 				BE8E56451C0B5A6D0076CECA /* slow.375.jpg */,
 				BE8E56461C0B5A6D0076CECA /* valentinevignettes.375.jpg */,
 			);
-			name = 375x375;
+			name = "375x375 album covers";
+			sourceTree = "<group>";
+		};
+		BE8E56701C0BF6C00076CECA /* 1400x1400 album covers */ = {
+			isa = PBXGroup;
+			children = (
+				BE8E56661C0BF6B80076CECA /* awaketooearly.1400.jpg */,
+				BE8E56671C0BF6B80076CECA /* birdsheart.1400.jpg */,
+				BE8E56681C0BF6B80076CECA /* slow.1400.jpg */,
+				BE8E56691C0BF6B80076CECA /* valentinevignettes.1400.jpg */,
+				BE8E566A1C0BF6B80076CECA /* pipesanddreams.1400.jpg */,
+			);
+			name = "1400x1400 album covers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,15 +408,21 @@
 			files = (
 				BE8E55F91C0AD85D0076CECA /* LaunchScreen.storyboard in Resources */,
 				BE8E562B1C0AD8920076CECA /* slow-02.mp3 in Resources */,
+				BE8E566C1C0BF6B80076CECA /* birdsheart.1400.jpg in Resources */,
+				BE8E56631C0BD22B0076CECA /* pause.png in Resources */,
 				BE8E563C1C0AD8E30076CECA /* valentinevignettes.100.jpg in Resources */,
+				BE8E56651C0BD22B0076CECA /* previous.png in Resources */,
 				BE8E563A1C0AD8E30076CECA /* pipesanddreams.100.jpg in Resources */,
 				BE8E56321C0AD8920076CECA /* slow-09.mp3 in Resources */,
 				BE8E56301C0AD8920076CECA /* slow-07.mp3 in Resources */,
+				BE8E566B1C0BF6B80076CECA /* awaketooearly.1400.jpg in Resources */,
 				BE8E564B1C0B5A6D0076CECA /* valentinevignettes.375.jpg in Resources */,
 				BE8E55F61C0AD85D0076CECA /* Assets.xcassets in Resources */,
 				BE8E56491C0B5A6D0076CECA /* pipesanddreams.375.jpg in Resources */,
 				BE8E56391C0AD8E30076CECA /* birdsheart.100.jpg in Resources */,
 				BE8E56381C0AD8E30076CECA /* awaketooearly.100.jpg in Resources */,
+				BE8E566E1C0BF6B80076CECA /* valentinevignettes.1400.jpg in Resources */,
+				BE8E566D1C0BF6B80076CECA /* slow.1400.jpg in Resources */,
 				BE8E562D1C0AD8920076CECA /* slow-04.mp3 in Resources */,
 				BE8E56471C0B5A6D0076CECA /* awaketooearly.375.jpg in Resources */,
 				BE8E562C1C0AD8920076CECA /* slow-03.mp3 in Resources */,
@@ -390,7 +431,10 @@
 				BE8E563B1C0AD8E30076CECA /* slow.100.jpg in Resources */,
 				BE8E56311C0AD8920076CECA /* slow-08.mp3 in Resources */,
 				BE8E564A1C0B5A6D0076CECA /* slow.375.jpg in Resources */,
+				BE8E566F1C0BF6B80076CECA /* pipesanddreams.1400.jpg in Resources */,
 				BE8E55F41C0AD85D0076CECA /* Main.storyboard in Resources */,
+				BE8E56641C0BD22B0076CECA /* play.png in Resources */,
+				BE8E56621C0BD22B0076CECA /* next.png in Resources */,
 				BE8E56481C0B5A6D0076CECA /* birdsheart.375.jpg in Resources */,
 				BE8E562F1C0AD8920076CECA /* slow-06.mp3 in Resources */,
 			);

@@ -33,7 +33,7 @@
         NSString *newTitle = [album description];
         [self setTitle:newTitle];
         
-        self.imageview.image = [UIImage imageNamed:album.filenameFor375image];
+        self.imageview.image = [UIImage imageNamed:album.filenameFor1400image];
     }
 }
 
