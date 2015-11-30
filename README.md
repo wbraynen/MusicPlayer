@@ -6,6 +6,6 @@ In other words, this is my pet project for learning the basics of Objective C :)
 
 Screenshots of what I have implemented so far:
 
-![image](http://104.236.148.49/images/musicplayer/screenshot4.png)
-![image](http://104.236.148.49/images/musicplayer/screenshot2.png)
-![image](http://104.236.148.49/images/musicplayer/screenshot3.png)
+|MasterViewController|Detail, paused|Detail, playing|
+|---|---|---|
+|![image](http://104.236.148.49/images/musicplayer/screenshot4.png)|![image](http://104.236.148.49/images/musicplayer/screenshot2.png)|![image](http://104.236.148.49/images/musicplayer/screenshot3.png)|
