@@ -12,23 +12,43 @@
 
 @implementation Player
 
+@synthesize isPlaying = _isPlaying;
+@synthesize isPaused = _isPaused;
+@synthesize isStopped = _isStopped;
 
 
-- (instancetype)init {
-    
-    // init vars for table cells
+- (NSArray *) fetchAlbums {
     Album *slow = [[Album alloc] initWithTitle:@"Slow" year:@"2016" filenameBase:@"slow"];
-    
     Album *birdsheart = [[Album alloc] initWithTitle:@"The Bird's Heart" year:@"2015" filenameBase:@"birdsheart"];
     Album *valentinevignettes = [[Album alloc] initWithTitle:@"Valentine Vignettes" year:@"2014" filenameBase:@"valentinevignettes"];
     Album *pipesanddreams = [[Album alloc] initWithTitle:@"Pipes and Dreams" year:@"2013" filenameBase:@"pipesanddreams"];
     Album *awaketooearly = [[Album alloc] initWithTitle:@"Awake Too Early" year:@"2012" filenameBase:@"awaketooearly"];
-    self.albums = @[ slow, birdsheart, valentinevignettes, pipesanddreams, awaketooearly ];
     
+    return @[ slow, birdsheart, valentinevignettes, pipesanddreams, awaketooearly ];
+}
+
+
+- (instancetype)init {
+    
+    _isPaused = NO;
+    _albums = [self fetchAlbums];
+    
+    [self playTrackFromBeginning];
     return self;
 }
 
-- (void)playFile:(NSString *)filename {
+- (BOOL) isPlaying {
+    _isPlaying = self.player.isPlaying;
+    return _isPlaying;
+}
+
+
+- (void)playTrackFromBeginning {
+    NSString *filename = [self.currentAlbum getAudioFilenameForTrackWithoutExtension:self.currentTrack];
+    [self createPlayerWithFile:filename];
+}
+
+- (void)createPlayerWithFile:(NSString *)filename {
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *path = [bundle pathForResource:filename ofType:@"mp3"];
     
@@ -39,7 +59,6 @@
         self.player = newPlayer;
         
         [newPlayer prepareToPlay];
-        [newPlayer play];
     }
 }
 
@@ -57,11 +76,12 @@
 
 - (void)pause {
     [self.player pause];
+    self.isPaused = YES;
 }
 
-- (void)play {
-    NSString *filename = [self.currentAlbum getAudioFilenameForTrackWithoutExtension:self.currentTrack];
-    [self playFile:filename];
+- (void)play { // or resume
+    [self.player play];
+    self.isPaused = NO;
 }
 
 - (void)playNextTrack {

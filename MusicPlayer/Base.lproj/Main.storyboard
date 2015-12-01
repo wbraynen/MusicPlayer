@@ -143,6 +143,10 @@
                                     <constraint firstAttribute="height" constant="93" id="8d5-ix-H9h"/>
                                 </constraints>
                                 <state key="normal" image="previous.png"/>
+                                <connections>
+                                    <action selector="playButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="ofC-mT-zOA"/>
+                                    <action selector="previousButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="4d9-Mz-68l"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqi-su-Xv3" userLabel="Next Button">
                                 <rect key="frame" x="245" y="287" width="100" height="93"/>
@@ -152,6 +156,9 @@
                                     <constraint firstAttribute="height" constant="93" id="ch1-9D-fZw"/>
                                 </constraints>
                                 <state key="normal" image="next.png"/>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="n7u-ob-jD3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -190,7 +197,9 @@
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="imageview" destination="JvI-oq-3LA" id="Rzk-iR-VHy"/>
+                        <outlet property="nextButton" destination="wqi-su-Xv3" id="cNv-ni-QjN"/>
                         <outlet property="playButton" destination="8JG-cN-uA6" id="v7K-gz-RnL"/>
+                        <outlet property="previousButton" destination="q9I-KS-XQx" id="ZjR-IN-SB1"/>
                         <outlet property="tableview" destination="9bR-in-wTz" id="Vc6-op-lKh"/>
                     </connections>
                 </viewController>

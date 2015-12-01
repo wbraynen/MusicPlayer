@@ -14,8 +14,4 @@
     return [UIColor colorWithRed:0.22 green:0.275 blue:0.294 alpha:1];
 }
 
-+(UIColor *)aliceBlueColor {
-    return [UIColor colorWithRed:0.855 green:0.914 blue:1 alpha:1];
-}
-
 @end

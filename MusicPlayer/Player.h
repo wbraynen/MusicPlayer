@@ -18,11 +18,11 @@
 @property (readwrite, atomic) NSUInteger currentTrack;
 
 @property (strong, nonatomic) AVAudioPlayer *player;
+@property (readwrite, nonatomic) BOOL isPaused;
+@property (readwrite, nonatomic) BOOL isPlaying;
+@property (readwrite, nonatomic) BOOL isStopped;
 
 - (void)playNextTrack;
-- (void)playFile:(NSString *)filename;
-- (NSUInteger)getTotalAlbums;
-
 
 typedef enum {
     AVAILABLEALBUM_SLOW,
@@ -35,8 +35,8 @@ typedef enum {
 
 - (void)setCurrentAlbumByIndex:(AvailableAlbums)album;
 
-- (void)play;
 - (void)pause;
+- (void)play;
 
 - (void)playTrack:(NSUInteger)trackIndex;
 

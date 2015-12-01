@@ -15,8 +15,14 @@
 @property (weak, nonatomic) Player *player;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageview;
-- (IBAction)playButtonPressed:(UIButton *)sender;
+
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property (weak, nonatomic) IBOutlet UIButton *previousButton;
+
+- (IBAction)playButtonPressed:(UIButton *)sender;
+- (IBAction)nextButtonPressed:(UIButton *)sender;
+- (IBAction)previousButtonPressed:(UIButton *)sender;
 
 @property (readwrite) BOOL isPaused;
 

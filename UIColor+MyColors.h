@@ -11,6 +11,5 @@
 @interface UIColor (MyColors)
 
 +(UIColor *)outerSpaceColor;
-+(UIColor *)aliceBlueColor;
 
 @end

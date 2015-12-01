@@ -46,6 +46,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self.player init];
     [self configureView];
 }
 
@@ -66,13 +67,14 @@
 }
 
 - (IBAction)playButtonPressed:(UIButton *)sender {
-    if (NO == self.isPaused) {
-        [self changePlayButtonToPlayState];
-        [self.player play];
-    } else { // if (YES == self.isPaused)
+    if (self.player.isPlaying) {
         [self changePlayButtonToPausedState];
         [self.player pause];
+    } else {
+        [self changePlayButtonToPlayState];
+        [self.player play];
     }
+    
     self.isPaused = !self.isPaused;
 }
 
@@ -111,4 +113,10 @@
 }
 
 
+- (IBAction)previousButtonPressed:(UIButton *)sender {
+}
+
+- (IBAction)nextButtonPressed:(UIButton *)sender {
+    
+}
 @end
