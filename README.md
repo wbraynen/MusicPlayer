@@ -8,4 +8,4 @@ Screenshots of what I have implemented so far:
 
 |MasterViewController|Detail, paused|Detail, playing|
 |---|---|---|
-|![image](http://104.236.148.49/images/musicplayer/screenshot4.png)|![image](http://104.236.148.49/images/musicplayer/screenshot2.png)|![image](http://104.236.148.49/images/musicplayer/screenshot3.png)|
+|![image](https://cloud.githubusercontent.com/assets/4765449/11490289/74a0f258-9794-11e5-8046-0a111f5167b5.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11490293/7d8fc2fe-9794-11e5-9a62-78059746872b.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11490296/83b8b708-9794-11e5-99ad-17cbc4e118aa.png)|
