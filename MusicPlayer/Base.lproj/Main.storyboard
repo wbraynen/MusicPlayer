@@ -42,14 +42,6 @@
                                     <constraint firstAttribute="width" secondItem="JvI-oq-3LA" secondAttribute="height" multiplier="1:1" id="Bha-Cx-FF7"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JG-cN-uA6">
-                                <rect key="frame" x="137" y="210" width="100" height="93"/>
-                                <animations/>
-                                <state key="normal" image="play.png"/>
-                                <connections>
-                                    <action selector="playButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="ggd-Xy-ghf"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9bR-in-wTz">
                                 <rect key="frame" x="0.0" y="439" width="387" height="228"/>
                                 <animations/>
@@ -131,23 +123,59 @@
                                     <outlet property="delegate" destination="JEX-9P-axG" id="Djh-AQ-ctM"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JG-cN-uA6">
+                                <rect key="frame" x="137" y="287" width="100" height="93"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="7IQ-Sl-FQC"/>
+                                    <constraint firstAttribute="width" constant="100" id="k1K-zM-SHa"/>
+                                </constraints>
+                                <state key="normal" image="play.png"/>
+                                <connections>
+                                    <action selector="playButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="ggd-Xy-ghf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9I-KS-XQx" userLabel="Previous Button">
+                                <rect key="frame" x="36" y="287" width="100" height="93"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="0Hn-HR-ozB"/>
+                                    <constraint firstAttribute="height" constant="93" id="8d5-ix-H9h"/>
+                                </constraints>
+                                <state key="normal" image="previous.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqi-su-Xv3" userLabel="Next Button">
+                                <rect key="frame" x="245" y="287" width="100" height="93"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Z2c-l0-nlF"/>
+                                    <constraint firstAttribute="height" constant="93" id="ch1-9D-fZw"/>
+                                </constraints>
+                                <state key="normal" image="next.png"/>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.2216919007" green="0.27342238520000001" blue="0.29605693719999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="9bR-in-wTz" firstAttribute="bottom" secondItem="GAO-Cl-Wes" secondAttribute="top" id="3Hu-cD-fFs"/>
                             <constraint firstAttribute="trailing" secondItem="JvI-oq-3LA" secondAttribute="trailing" id="3ay-fR-Bte"/>
+                            <constraint firstItem="q9I-KS-XQx" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="4Y9-1a-wHh"/>
+                            <constraint firstItem="8JG-cN-uA6" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="6MH-kQ-20P"/>
                             <constraint firstItem="9bR-in-wTz" firstAttribute="leading" secondItem="JvI-oq-3LA" secondAttribute="leading" id="8UV-7W-blf"/>
+                            <constraint firstItem="wqi-su-Xv3" firstAttribute="leading" secondItem="8JG-cN-uA6" secondAttribute="trailing" constant="1" id="A33-cb-LiE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9bR-in-wTz" secondAttribute="trailing" constant="-28" id="AT8-TX-lhk"/>
                             <constraint firstItem="8JG-cN-uA6" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="EbH-pX-aHp"/>
                             <constraint firstItem="8JG-cN-uA6" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="FfJ-CJ-WWy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JvI-oq-3LA" secondAttribute="trailing" constant="-20" id="GVD-w5-LHR"/>
                             <constraint firstItem="JvI-oq-3LA" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="JLO-Cu-L0y"/>
+                            <constraint firstItem="8JG-cN-uA6" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="Noe-bM-fs2"/>
                             <constraint firstItem="JvI-oq-3LA" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-20" id="PHW-wj-Hqp"/>
+                            <constraint firstItem="wqi-su-Xv3" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="Y4g-ao-EKl"/>
                             <constraint firstItem="8JG-cN-uA6" firstAttribute="centerX" secondItem="JvI-oq-3LA" secondAttribute="centerX" id="bLq-XX-5xi"/>
                             <constraint firstItem="9bR-in-wTz" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="bUs-7c-6sS"/>
+                            <constraint firstItem="8JG-cN-uA6" firstAttribute="leading" secondItem="q9I-KS-XQx" secondAttribute="trailing" constant="1" id="tYa-L3-JJb"/>
                             <constraint firstItem="9bR-in-wTz" firstAttribute="top" secondItem="JvI-oq-3LA" secondAttribute="bottom" id="uCZ-95-6rI"/>
-                            <constraint firstItem="8JG-cN-uA6" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="146" id="zDI-ll-VT2"/>
+                            <constraint firstItem="8JG-cN-uA6" firstAttribute="leading" secondItem="q9I-KS-XQx" secondAttribute="trailing" constant="1" id="v08-xh-Wie"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -265,7 +293,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="next.png" width="100" height="93"/>
         <image name="play.png" width="100" height="93"/>
+        <image name="previous.png" width="100" height="93"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
