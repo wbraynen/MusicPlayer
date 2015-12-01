@@ -7,6 +7,8 @@
 //
 
 #import "DetailViewController.h"
+#import "DetailCell.h"
+
 #import "Album.h"
 #import "Player.h"
 #import <Foundation/Foundation.h> // for NSAssert
@@ -85,20 +87,26 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrackCell"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:@"Cell"];
-    }
+    DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailCell_ReuseID"];
+    
+    int trackNumber = indexPath.row + 1;
+    NSString *trackNumberStr = [NSString stringWithFormat:@"%d", trackNumber];
+    [cell.trackNumberButton setTitle:trackNumberStr forState:UIControlStateNormal];
+    
+    cell.backgroundColor = [UIColor outerSpaceColor];
+    cell.trackNameLabel.text = self.player.currentAlbum.tracks[indexPath.row];
+    cell.trackDurationLabel.text = @"3:54";
     
     // Configure the cell.
+    /*
     cell.backgroundColor = [UIColor outerSpaceColor];
     cell.textLabel.textColor = [UIColor aliceBlueColor];
     cell.textLabel.text = self.player.currentAlbum.tracks[indexPath.row];
     return cell;
-    
+    */
 //    [self.player playTrack:indexPath.row];
+    
+    return cell;
     
 }
 

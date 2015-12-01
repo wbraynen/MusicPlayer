@@ -87,7 +87,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MasterCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MasterCell_ID" forIndexPath:indexPath];
+    MasterCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MasterCell_ReuseID" forIndexPath:indexPath];
     
     // Configure the cell...
     Album *album = self.player.albums[indexPath.row];
