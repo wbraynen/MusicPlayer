@@ -43,13 +43,21 @@
         
         self.imageview.image = [UIImage imageNamed:album.filenameFor1400image];
         self.isPaused = NO;
+        
+        [self setPreviousButtonStateAppropriately];
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
     [self configureView];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.player.audioPlayer stop];
+    //self.player.audioPlayer = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -108,11 +116,18 @@
     self.isPaused = !self.isPaused;
 }
 
+- (void)setPreviousButtonStateAppropriately {
+    BOOL isNotFirstTrack = !self.player.isFirstTrack;
+    [self.previousButton setEnabled:isNotFirstTrack];
+}
+
 - (IBAction)previousButtonPressed:(UIButton *)sender {
     [self.player previousTrack];
+    [self setPreviousButtonStateAppropriately];
 }
 
 - (IBAction)nextButtonPressed:(UIButton *)sender {
     [self.player nextTrack];
+    [self setPreviousButtonStateAppropriately];
 }
 @end
