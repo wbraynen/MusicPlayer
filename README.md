@@ -4,9 +4,9 @@ This is an iPhone app and a simple illustration of how to use AVAudioPlayer.  It
 
 Screenshots of what I have implemented so far:
 
-|MasterViewController|Detail, paused|Detail, playing|
+|MasterViewController|Detail, playing|Detail, paused|
 |---|---|---|
-|![image](https://cloud.githubusercontent.com/assets/4765449/11490289/74a0f258-9794-11e5-8046-0a111f5167b5.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11544445/1a7168f0-98ff-11e5-99ec-e6521981dc28.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11544444/1a70dcbe-98ff-11e5-95e8-a1c29d5ede01.png)|
+|![image](https://cloud.githubusercontent.com/assets/4765449/11490289/74a0f258-9794-11e5-8046-0a111f5167b5.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11544444/1a70dcbe-98ff-11e5-95e8-a1c29d5ede01.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11544445/1a7168f0-98ff-11e5-99ec-e6521981dc28.png)|
 
 The plan is to start with a mocked-up but functional player and then build on that.  For example, serve up hardcoded data, then add a CoreData store, then add http with my own node.js server (just like the one my lighthouse-api.org project uses); or just use RestKit instead of AFNetworking from the get go.
 
