@@ -8,7 +8,12 @@ Why not in Swift, you ask?  Well, wanted to code some stuff for fun in obj-c, bu
 
 Screenshots of what I have implemented so far:
 
-|MasterViewController|Detail, paused|Detail, playing|On first track|
-|---|---|---|---|
-|![image](https://cloud.githubusercontent.com/assets/4765449/11490289/74a0f258-9794-11e5-8046-0a111f5167b5.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11544445/1a7168f0-98ff-11e5-99ec-e6521981dc28.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11544444/1a70dcbe-98ff-11e5-95e8-a1c29d5ede01.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11544719/a06bc698-9900-11e5-829d-e181078b4a02.png)|
+|MasterViewController|Detail, paused|Detail, playing|
+|---|---|---|
+|![image](https://cloud.githubusercontent.com/assets/4765449/11490289/74a0f258-9794-11e5-8046-0a111f5167b5.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11544445/1a7168f0-98ff-11e5-99ec-e6521981dc28.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11544444/1a70dcbe-98ff-11e5-95e8-a1c29d5ede01.png)|
 
+|MasterViewController|On first track (bad)|On last track (good)|
+|---|---|---|
+|![image](https://cloud.githubusercontent.com/assets/4765449/11490289/74a0f258-9794-11e5-8046-0a111f5167b5.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11545239/645ad1b4-9903-11e5-9f4b-bcb025805100.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11545238/6459cd78-9903-11e5-933b-e1e67dbe8859.jpg)|
+
+[comment]: <> (https://cloud.githubusercontent.com/assets/4765449/11524488/6fbb4a46-9888-11e5-88ae-c72bf4f1c00b.png)
