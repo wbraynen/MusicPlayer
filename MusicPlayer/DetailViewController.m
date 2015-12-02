@@ -102,21 +102,25 @@
     const NSInteger trackNumber = indexPath.row + 1;
 
     [cell.trackNumberButton setImage:nil forState:UIControlStateNormal];
-    if (trackNumber == self.player.currentTrackNumber && self.player.isPlaying) {
-        // show icon for current track *if* it's playing
-        UIImage *note = [UIImage imageNamed:@"note.png"];
-        [cell.trackNumberButton setImage:note forState:UIControlStateNormal];
-    } else if (trackNumber == self.player.currentTrackNumber) {
-        // show disabled version of icon if current track is not playing
-        UIImage *disabledNote = [UIImage imageNamed:@"note_disabled.png"];
-        [cell.trackNumberButton setImage:disabledNote forState:UIControlStateNormal];
-    } else {
+    if (trackNumber != self.player.currentTrackNumber) {
+        // for most tracks, just displaying the track number.  no icon.  simple.
         NSString *trackNumberStr = [NSString stringWithFormat:@"%zd", trackNumber];
         [cell.trackNumberButton setTitle:trackNumberStr forState:UIControlStateNormal];
+    } else {
+        // for current track, display an icon (so the user knows which track is currently playing or will play if the user pressed "play")
+        UIImage *note;
+        if (self.player.isPlaying) {
+            // this track is playing
+            note = [UIImage imageNamed:@"thisTrackIsPlaying.png"];
+        } else {
+            // this track is paused
+            note = [UIImage imageNamed:@"thisTrackIsPaused.png"];
+        }
+        [cell.trackNumberButton setImage:note forState:UIControlStateNormal];
     }
-    
     cell.trackNameLabel.text = self.player.currentAlbum.tracks[indexPath.row];
 
+#warning TODO: Use `AVURLAsset` to get the duration of each track. See http://stackoverflow.com/questions/5219379/how-to-get-the-duration-of-an-audio-file-in-ios
     cell.trackDurationLabel.text = @"3:54";
     
     return cell;
