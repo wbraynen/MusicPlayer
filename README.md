@@ -8,7 +8,7 @@ Why not in Swift, you ask?  Well, wanted to code some stuff for fun in obj-c, bu
 
 Screenshots of what I have implemented so far:
 
-|MasterViewController|Detail, paused|Detail, playing|On last track|
+|MasterViewController|Detail, paused|Detail, playing|On first track|
 |---|---|---|---|
-|![image](https://cloud.githubusercontent.com/assets/4765449/11490289/74a0f258-9794-11e5-8046-0a111f5167b5.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11544445/1a7168f0-98ff-11e5-99ec-e6521981dc28.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11544444/1a70dcbe-98ff-11e5-95e8-a1c29d5ede01.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11544508/7574e894-98ff-11e5-9fc9-8735a7fc2a2b.png)|
+|![image](https://cloud.githubusercontent.com/assets/4765449/11490289/74a0f258-9794-11e5-8046-0a111f5167b5.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11544445/1a7168f0-98ff-11e5-99ec-e6521981dc28.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11544444/1a70dcbe-98ff-11e5-95e8-a1c29d5ede01.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11544719/a06bc698-9900-11e5-829d-e181078b4a02.png)|
 
