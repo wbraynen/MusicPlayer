@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE8836541C0CFC2C003CF2C0 /* UIColor+MyColors.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8836531C0CFC2C003CF2C0 /* UIColor+MyColors.m */; };
 		BE88365B1C0D0CD9003CF2C0 /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE88365A1C0D0CD9003CF2C0 /* DetailCell.m */; };
-		BE88365D1C0D20EF003CF2C0 /* thisTrackIsPlaying.png in Resources */ = {isa = PBXBuildFile; fileRef = BE88365C1C0D20EF003CF2C0 /* thisTrackIsPlaying.png */; };
 		BE8836631C0E7597003CF2C0 /* Catalog.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8836621C0E7597003CF2C0 /* Catalog.m */; };
 		BE8836681C0E9490003CF2C0 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8836641C0E9490003CF2C0 /* next.png */; };
 		BE8836691C0E9490003CF2C0 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8836651C0E9490003CF2C0 /* pause.png */; };
 		BE88366A1C0E9490003CF2C0 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8836661C0E9490003CF2C0 /* play.png */; };
 		BE88366B1C0E9490003CF2C0 /* previous.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8836671C0E9490003CF2C0 /* previous.png */; };
+		BE88366D1C0EC82F003CF2C0 /* thisTrackIsPlaying.png in Resources */ = {isa = PBXBuildFile; fileRef = BE88366C1C0EC82F003CF2C0 /* thisTrackIsPlaying.png */; };
 		BE8E55E81C0AD85D0076CECA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8E55E71C0AD85D0076CECA /* main.m */; };
 		BE8E55EB1C0AD85D0076CECA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8E55EA1C0AD85D0076CECA /* AppDelegate.m */; };
 		BE8E55EE1C0AD85D0076CECA /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8E55ED1C0AD85D0076CECA /* MasterViewController.m */; };
@@ -106,17 +105,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BE8836521C0CFC2C003CF2C0 /* UIColor+MyColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MyColors.h"; sourceTree = "<group>"; };
-		BE8836531C0CFC2C003CF2C0 /* UIColor+MyColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MyColors.m"; sourceTree = "<group>"; };
 		BE8836591C0D0CD9003CF2C0 /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
 		BE88365A1C0D0CD9003CF2C0 /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
-		BE88365C1C0D20EF003CF2C0 /* thisTrackIsPlaying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thisTrackIsPlaying.png; sourceTree = "<group>"; };
 		BE8836611C0E7597003CF2C0 /* Catalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Catalog.h; sourceTree = "<group>"; };
 		BE8836621C0E7597003CF2C0 /* Catalog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Catalog.m; sourceTree = "<group>"; };
 		BE8836641C0E9490003CF2C0 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		BE8836651C0E9490003CF2C0 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		BE8836661C0E9490003CF2C0 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		BE8836671C0E9490003CF2C0 /* previous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = previous.png; sourceTree = "<group>"; };
+		BE88366C1C0EC82F003CF2C0 /* thisTrackIsPlaying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thisTrackIsPlaying.png; sourceTree = "<group>"; };
 		BE8E55E31C0AD85D0076CECA /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8E55E71C0AD85D0076CECA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE8E55E91C0AD85D0076CECA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -230,8 +227,6 @@
 		BE8E55DA1C0AD85D0076CECA = {
 			isa = PBXGroup;
 			children = (
-				BE8836521C0CFC2C003CF2C0 /* UIColor+MyColors.h */,
-				BE8836531C0CFC2C003CF2C0 /* UIColor+MyColors.m */,
 				BE8E55E51C0AD85D0076CECA /* MusicPlayer */,
 				BE8E56021C0AD85D0076CECA /* MusicPlayerTests */,
 				BE8E560D1C0AD85D0076CECA /* MusicPlayerUITests */,
@@ -252,6 +247,7 @@
 		BE8E55E51C0AD85D0076CECA /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				BE8E55E71C0AD85D0076CECA /* main.m */,
 				BE8E55E91C0AD85D0076CECA /* AppDelegate.h */,
 				BE8E55EA1C0AD85D0076CECA /* AppDelegate.m */,
 				BE8E561C1C0AD8690076CECA /* Master */,
@@ -276,11 +272,11 @@
 			children = (
 				BE8E561F1C0AD8850076CECA /* music */,
 				BE8E561E1C0AD87C0076CECA /* images */,
-				BE8E55E71C0AD85D0076CECA /* main.m */,
 				BE8836641C0E9490003CF2C0 /* next.png */,
 				BE8836651C0E9490003CF2C0 /* pause.png */,
 				BE8836661C0E9490003CF2C0 /* play.png */,
 				BE8836671C0E9490003CF2C0 /* previous.png */,
+				BE88366C1C0EC82F003CF2C0 /* thisTrackIsPlaying.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -390,7 +386,6 @@
 		BE8E56701C0BF6C00076CECA /* 1400x1400 album covers */ = {
 			isa = PBXGroup;
 			children = (
-				BE88365C1C0D20EF003CF2C0 /* thisTrackIsPlaying.png */,
 				BE8E56661C0BF6B80076CECA /* awaketooearly.1400.jpg */,
 				BE8E56671C0BF6B80076CECA /* birdsheart.1400.jpg */,
 				BE8E56681C0BF6B80076CECA /* slow.1400.jpg */,
@@ -567,7 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE8E568F1C0C0C1A0076CECA /* birdsheart.13.mp3 in Resources */,
-				BE88365D1C0D20EF003CF2C0 /* thisTrackIsPlaying.png in Resources */,
+				BE88366D1C0EC82F003CF2C0 /* thisTrackIsPlaying.png in Resources */,
 				BE8E56961C0C0ECF0076CECA /* birdsheart.2.mp3 in Resources */,
 				BE8E55F91C0AD85D0076CECA /* LaunchScreen.storyboard in Resources */,
 				BE8E56BA1C0C110A0076CECA /* awaketooearly.2.mp3 in Resources */,
@@ -664,7 +659,6 @@
 				BE8E564F1C0B65910076CECA /* Album.m in Sources */,
 				BE8E55E81C0AD85D0076CECA /* main.m in Sources */,
 				BE88365B1C0D0CD9003CF2C0 /* DetailCell.m in Sources */,
-				BE8836541C0CFC2C003CF2C0 /* UIColor+MyColors.m in Sources */,
 				BE8E56731C0BFBCB0076CECA /* Player.m in Sources */,
 				BE8E55F11C0AD85D0076CECA /* DetailViewController.m in Sources */,
 			);

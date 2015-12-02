@@ -12,7 +12,6 @@
 #import "Album.h"
 #import "Player.h"
 #import <Foundation/Foundation.h> // for NSAssert
-#import "UIColor+MyColors.h"
 
 @interface DetailViewController ()
 
@@ -97,12 +96,21 @@
     
     DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailCell_ReuseID"];
     
-    NSInteger trackNumber = indexPath.row + 1;
-    NSString *trackNumberStr = [NSString stringWithFormat:@"%zd", trackNumber];
-    [cell.trackNumberButton setTitle:trackNumberStr forState:UIControlStateNormal];
+    const NSInteger trackNumber = indexPath.row + 1;
     
-    cell.backgroundColor = [UIColor outerSpaceColor];
+    if (trackNumber == self.player.currentTrackNumber) {
+        // show icon for current track
+        UIImage *image = [UIImage imageNamed:@"thisTrackIsPlaying.png"];
+        [cell.trackNumberButton setImage:image forState:UIControlStateNormal];
+    } else {
+        // show track number for all other tracks
+        [cell.trackNumberButton setImage:nil forState:UIControlStateNormal];
+        NSString *trackNumberStr = [NSString stringWithFormat:@"%zd", trackNumber];
+        [cell.trackNumberButton setTitle:trackNumberStr forState:UIControlStateNormal];
+    }
+    
     cell.trackNameLabel.text = self.player.currentAlbum.tracks[indexPath.row];
+
     cell.trackDurationLabel.text = @"3:54";
     
     return cell;
@@ -141,11 +149,18 @@
 - (void)updateBackButton {
     BOOL stillRoomToBackUp = !self.player.isFirstTrack;
     [self.backButton setEnabled:stillRoomToBackUp];
+    [self updateTableRows];
 }
 
 - (void)updateForwardButton {
     BOOL stillRoomToGoForward = !self.player.isLastTrack;
     [self.forwardButton setEnabled:stillRoomToGoForward];
+    [self updateTableRows];
+}
+
+
+- (void)updateTableRows {
+    [self.tableview reloadRowsAtIndexPaths:[self.tableview indexPathsForVisibleRows] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 
