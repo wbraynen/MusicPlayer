@@ -12,7 +12,7 @@
 
 
 @property (strong, nonatomic) id detailItem;
-@property (weak, nonatomic) Player *player;
+@property (strong, nonatomic) Player *player;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageview;
 
@@ -22,6 +22,7 @@
 
 - (IBAction)playButtonPressed:(UIButton *)sender;
 - (IBAction)nextButtonPressed:(UIButton *)sender;
+
 - (IBAction)previousButtonPressed:(UIButton *)sender;
 
 @property (readwrite) BOOL isPaused;

@@ -12,32 +12,35 @@
 
 @interface Player : NSObject<AVAudioPlayerDelegate>
 
-
-@property (strong, nonatomic) NSArray *albums;
-@property (strong, nonatomic) Album *currentAlbum;
-@property (readwrite, atomic) NSUInteger currentTrack;
-
-@property (strong, nonatomic) AVAudioPlayer *player;
-@property (readwrite, nonatomic) BOOL isPaused;
-@property (readwrite, nonatomic) BOOL isPlaying;
-@property (readwrite, nonatomic) BOOL isStopped;
-
-- (void)playNextTrack;
-
-typedef enum {
-    AVAILABLEALBUM_SLOW,
-    AVAILABLEALBUM_BIRDSHEART,
-    ALBUM_VALENTINEVIGNETTES,
-    AVAILABLEALBUM_PIPESANDDREAMS,
-    AVAILABLEALBUM_AWAKETOOEARLY,
-    AVAILABLEALBUMS_COUNT
-} AvailableAlbums;
-
-- (void)setCurrentAlbumByIndex:(AvailableAlbums)album;
+//
+// Thep player's public API:
+//
+- (instancetype)initWithAlbum:(Album *)album;
 
 - (void)pause;
 - (void)play;
 
-- (void)playTrack:(NSUInteger)trackIndex;
+- (void)moveToTrackNumber:(NSUInteger)trackNumber;
+- (NSUInteger)nextTrack;
+- (NSUInteger)previousTrack;
+
+@property (readonly, nonatomic) BOOL isPlaying;
+@property (readonly, nonatomic) BOOL isPaused;
+@property (readonly, nonatomic) BOOL isStopped;
+
+@property (strong, nonatomic) Album *currentAlbum;
+@property (readonly, nonatomic) NSUInteger currentTrackNumber;
+@property (readwrite, nonatomic) BOOL isFirstTrack;
+@property (readwrite, nonatomic) BOOL isLastTrack;
+
+
+//
+// For internal use:
+//
+#warning Does obj-c have a concept of private or protected properties?
+@property (readwrite, atomic) NSUInteger currentTrackIndex;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+
+
 
 @end

@@ -144,7 +144,6 @@
                                 </constraints>
                                 <state key="normal" image="previous.png"/>
                                 <connections>
-                                    <action selector="playButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="ofC-mT-zOA"/>
                                     <action selector="previousButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="4d9-Mz-68l"/>
                                 </connections>
                             </button>
@@ -157,7 +156,7 @@
                                 </constraints>
                                 <state key="normal" image="next.png"/>
                                 <connections>
-                                    <action selector="nextButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="n7u-ob-jD3"/>
+                                    <action selector="nextButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="5kh-vH-k3Z"/>
                                 </connections>
                             </button>
                         </subviews>

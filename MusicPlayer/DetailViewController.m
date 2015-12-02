@@ -26,8 +26,11 @@
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
         
+        Album *album = newDetailItem;
+        self.player = [[Player alloc] initWithAlbum:album];
+        
         // Update the view
-        //[self configureView];
+        [self configureView];
     }
 }
 
@@ -46,7 +49,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self.player init];
     [self configureView];
 }
 
@@ -66,22 +68,11 @@
     [self.playButton setImage:newButtonImage forState:UIControlStateNormal];
 }
 
-- (IBAction)playButtonPressed:(UIButton *)sender {
-    if (self.player.isPlaying) {
-        [self changePlayButtonToPausedState];
-        [self.player pause];
-    } else {
-        [self changePlayButtonToPlayState];
-        [self.player play];
-    }
-    
-    self.isPaused = !self.isPaused;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     Album *album = self.player.currentAlbum;
     if (album) {
-        return album.tracks.count;
+        return album.totalTracks;
     } else {
         NSAssert(album, @"The player has no currentAlbum set.");
         return 0;
@@ -99,24 +90,29 @@
     cell.trackNameLabel.text = self.player.currentAlbum.tracks[indexPath.row];
     cell.trackDurationLabel.text = @"3:54";
     
-    // Configure the cell.
-    /*
-    cell.backgroundColor = [UIColor outerSpaceColor];
-    cell.textLabel.textColor = [UIColor aliceBlueColor];
-    cell.textLabel.text = self.player.currentAlbum.tracks[indexPath.row];
-    return cell;
-    */
-//    [self.player playTrack:indexPath.row];
-    
     return cell;
     
 }
 
 
+
+- (IBAction)playButtonPressed:(UIButton *)sender {
+    if (self.player.isPlaying) {
+        [self changePlayButtonToPausedState];
+        [self.player pause];
+    } else {
+        [self changePlayButtonToPlayState];
+        [self.player play];
+    }
+    
+    self.isPaused = !self.isPaused;
+}
+
 - (IBAction)previousButtonPressed:(UIButton *)sender {
+    [self.player previousTrack];
 }
 
 - (IBAction)nextButtonPressed:(UIButton *)sender {
-    
+    [self.player nextTrack];
 }
 @end

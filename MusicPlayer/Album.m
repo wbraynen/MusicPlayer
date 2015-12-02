@@ -10,6 +10,13 @@
 
 @implementation Album
 
+@synthesize totalTracks = _totalTracks;
+
+-(NSUInteger) totalTracks {
+    return self.tracks.count;
+}
+
+
 -(instancetype)initWithTitle:(NSString *) title year:(NSString *)year filenameBase:(NSString *)filenameBase {
     
     _title = title;
@@ -93,20 +100,6 @@
                                 };
     
     return [allTracks objectForKey:albumTitle];
-}
-
-/**
- * If track < self.totalTracks, for example if track is 0 and filenameWithoutExtension is "awaketooearly",
- *   then returns "awaketooearly.1.mp3"
- * Otherwise, if track >= self.totalTracks, returns nil
- */
--(NSString *)getAudioFilenameForTrackWithoutExtension:(NSUInteger)track {
-    if (track < self.tracks.count) {
-        track++;
-        return [NSString stringWithFormat:@"%@.%lu", self.filenameBase, (unsigned long)track];
-    } else {
-        return nil;
-    }
 }
 
 @end

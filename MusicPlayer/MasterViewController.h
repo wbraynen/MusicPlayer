@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Catalog.h"
 
 @class DetailViewController;
 @class Player;
@@ -14,7 +15,7 @@
 @interface MasterViewController : UITableViewController<UITableViewDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
-@property (strong, nonatomic) Player *player;
+@property (strong, nonatomic) Catalog *catalog;
 
 @end
 

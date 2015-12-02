@@ -10,7 +10,7 @@
 #import "DetailViewController.h"
 #import "MasterCell.h"
 #import "Album.h"
-#import "Player.h"
+#import "Catalog.h"
 
 @interface MasterViewController ()
 
@@ -31,7 +31,7 @@
     //[self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     
     self.view.backgroundColor = [UIColor blackColor]; //"#145b7c"
-    self.player = [[Player alloc] init];
+    self.catalog = [[Catalog alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -58,19 +58,14 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        
-        if (indexPath.row < AVAILABLEALBUMS_COUNT) {
-            [self.player setCurrentAlbumByIndex:indexPath.row];
-        }
+        int row = indexPath.row;
 
         DetailViewController *detailController = (DetailViewController *)[[segue destinationViewController] topViewController];
-        detailController.player = self.player;
-        Album *album = self.player.currentAlbum;
+        Album *album = self.catalog.albums[row];
         if (album) {
             [detailController setDetailItem:album];
         }
     
-        detailController.player = self.player;
         detailController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         detailController.navigationItem.leftItemsSupplementBackButton = YES;
     }
@@ -83,14 +78,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.player.albums.count;
+    return self.catalog.totalAlbums;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MasterCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MasterCell_ReuseID" forIndexPath:indexPath];
     
     // Configure the cell...
-    Album *album = self.player.albums[indexPath.row];
+    Album *album = self.catalog.albums[indexPath.row];
 
     cell.littleText.text = album.title;
     cell.bigText.text = album.year;
