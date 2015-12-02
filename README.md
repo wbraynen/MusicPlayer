@@ -2,7 +2,7 @@
 
 This is an iPhone app.  It is a specialized music player for experiencing the albums posted at [pianowill.com](pianowill.com).
 
-In other words, this is my pet project for learning the basics of Objective C :)
+The plan is to start with a mocked-up but functional player and then build on that.  Why not in Swift, you ask?  Oh man.
 
 Screenshots of what I have implemented so far:
 
