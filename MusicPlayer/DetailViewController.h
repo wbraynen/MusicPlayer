@@ -10,7 +10,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Player.h"
-@interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AVAudioPlayerDelegate>
 
 
 @property (strong, nonatomic) id detailItem;
@@ -19,13 +19,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageview;
 
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
-@property (weak, nonatomic) IBOutlet UIButton *nextButton;
-@property (weak, nonatomic) IBOutlet UIButton *previousButton;
+@property (weak, nonatomic) IBOutlet UIButton *forwardButton;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 
+- (IBAction)backButtonPressed:(UIButton *)sender;
 - (IBAction)playButtonPressed:(UIButton *)sender;
-- (IBAction)nextButtonPressed:(UIButton *)sender;
-
-- (IBAction)previousButtonPressed:(UIButton *)sender;
+- (IBAction)forwardButtonPressed:(UIButton *)sender;
 
 @property (readwrite) BOOL isPaused;
 

@@ -263,10 +263,10 @@
 				BE8E55E61C0AD85D0076CECA /* Supporting Files */,
 				BE8E564D1C0B65910076CECA /* Album.h */,
 				BE8E564E1C0B65910076CECA /* Album.m */,
-				BE8E56711C0BFBCB0076CECA /* Player.h */,
-				BE8E56721C0BFBCB0076CECA /* Player.m */,
 				BE8836611C0E7597003CF2C0 /* Catalog.h */,
 				BE8836621C0E7597003CF2C0 /* Catalog.m */,
+				BE8E56711C0BFBCB0076CECA /* Player.h */,
+				BE8E56721C0BFBCB0076CECA /* Player.m */,
 			);
 			path = MusicPlayer;
 			sourceTree = "<group>";

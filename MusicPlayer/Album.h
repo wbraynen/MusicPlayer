@@ -22,6 +22,6 @@
 
 @property (readonly, nonatomic) NSString *filenameBase;
 
--(instancetype)initWithTitle:(NSString *)title year:(NSString *)year filenameBase:(NSString *)filenameBase;
+- (instancetype)initWithTitle:(NSString *)title year:(NSString *)year filenameBase:(NSString *)filenameBase;
 
 @end

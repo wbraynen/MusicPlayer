@@ -42,8 +42,8 @@
                                     <constraint firstAttribute="width" secondItem="JvI-oq-3LA" secondAttribute="height" multiplier="375:361" id="HA9-Vv-vDD"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9I-KS-XQx" userLabel="Previous Button">
-                                <rect key="frame" x="44" y="125" width="90" height="90"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9I-KS-XQx" userLabel="Back Button">
+                                <rect key="frame" x="59" y="131" width="75" height="75"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="e5H-3p-IAL"/>
@@ -51,11 +51,11 @@
                                 </constraints>
                                 <state key="normal" image="previous.png"/>
                                 <connections>
-                                    <action selector="previousButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="4d9-Mz-68l"/>
+                                    <action selector="backButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="FLy-GL-IW3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqi-su-Xv3" userLabel="Next Button">
-                                <rect key="frame" x="248" y="131" width="90" height="90"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqi-su-Xv3" userLabel="Forward Button">
+                                <rect key="frame" x="240" y="131" width="75" height="75"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="6tT-Wj-8xl"/>
@@ -63,10 +63,10 @@
                                 </constraints>
                                 <state key="normal" image="next.png"/>
                                 <connections>
-                                    <action selector="nextButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="5kh-vH-k3Z"/>
+                                    <action selector="forwardButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="mRt-4S-Qgw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JG-cN-uA6">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JG-cN-uA6" userLabel="Play Button">
                                 <rect key="frame" x="142" y="124" width="90" height="90"/>
                                 <animations/>
                                 <constraints>
@@ -75,7 +75,7 @@
                                 </constraints>
                                 <state key="normal" image="play.png"/>
                                 <connections>
-                                    <action selector="playButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="ggd-Xy-ghf"/>
+                                    <action selector="playButtonPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="mYZ-Ph-Pcd"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9bR-in-wTz">
@@ -183,10 +183,10 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
+                        <outlet property="backButton" destination="q9I-KS-XQx" id="PS5-kV-lre"/>
+                        <outlet property="forwardButton" destination="wqi-su-Xv3" id="HBc-AL-Juj"/>
                         <outlet property="imageview" destination="JvI-oq-3LA" id="Rzk-iR-VHy"/>
-                        <outlet property="nextButton" destination="wqi-su-Xv3" id="cNv-ni-QjN"/>
-                        <outlet property="playButton" destination="8JG-cN-uA6" id="v7K-gz-RnL"/>
-                        <outlet property="previousButton" destination="q9I-KS-XQx" id="ZjR-IN-SB1"/>
+                        <outlet property="playButton" destination="8JG-cN-uA6" id="ZAH-1L-vVG"/>
                         <outlet property="tableview" destination="9bR-in-wTz" id="Vc6-op-lKh"/>
                     </connections>
                 </viewController>

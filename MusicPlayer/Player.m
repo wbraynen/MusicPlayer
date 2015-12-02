@@ -16,7 +16,7 @@
 @synthesize isLastTrack = _isLastTrack;
 @synthesize currentTrackNumber = _currentTrackNumber;
 
-#define AUDIO_FILENAME(trackNumber) [NSString stringWithFormat:@"%@.%d", self.currentAlbum.filenameBase, trackNumber] // without extension
+#define AUDIO_FILENAME(trackNumber) [NSString stringWithFormat:@"%@.%zd", self.currentAlbum.filenameBase, trackNumber] // without extension
 
 
 
@@ -107,7 +107,7 @@
 
 
 - (void)moveToTrackNumber:(NSUInteger)trackNumber {
-    int trackIndex = trackNumber - 1;
+    NSInteger trackIndex = trackNumber - 1;
     if (!self.currentAlbum || trackIndex < 0 || trackIndex >= self.currentAlbum.totalTracks) {
         NSAssert( false, @"trackNumber is outside range" );
 #warning Should probably instead throw an error or exception; which is better here?
@@ -163,13 +163,6 @@
     }
 
     return self.currentTrackNumber;
-}
-
-
-
-- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
-    
-#warning TODO: This event should be sent to DetailViewController, so that DetailViewController can turn the pause button into a play button.
 }
 
 

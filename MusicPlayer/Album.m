@@ -12,12 +12,12 @@
 
 @synthesize totalTracks = _totalTracks;
 
--(NSUInteger) totalTracks {
+- (NSUInteger) totalTracks {
     return self.tracks.count;
 }
 
 
--(instancetype)initWithTitle:(NSString *) title year:(NSString *)year filenameBase:(NSString *)filenameBase {
+- (instancetype)initWithTitle:(NSString *) title year:(NSString *)year filenameBase:(NSString *)filenameBase {
     
     _title = title;
     _year = year;
@@ -32,7 +32,7 @@
     return self;
 }
 
--(NSString *)description {
+- (NSString *)description {
     return [NSString stringWithFormat:@"(%@) %@", self.year, self.title];
 }
 

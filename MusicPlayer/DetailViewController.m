@@ -29,6 +29,8 @@
         Album *album = newDetailItem;
         self.player = [[Player alloc] initWithAlbum:album];
         
+        self.player.audioPlayer.delegate = self;
+        
         // Update the view
         [self configureView];
     }
@@ -44,7 +46,7 @@
         self.imageview.image = [UIImage imageNamed:album.filenameFor1400image];
         self.isPaused = NO;
         
-        [self setPreviousButtonStateAppropriately];
+        [self updateBackButton];
     }
 }
 
@@ -66,18 +68,22 @@
 }
 
 
-- (void)changePlayButtonToPausedState {
-    UIImage *newButtonImage = [UIImage imageNamed:@"play.png"]; // I shouldn't be creating an image every time; this should be a property... if I only understood properties well enough...
-    [self.playButton setImage:newButtonImage forState:UIControlStateNormal];
-}
-
-- (void)changePlayButtonToPlayState {
-    UIImage *newButtonImage = [UIImage imageNamed:@"pause.png"]; // I shouldn't be creating an image every time; this should be a property... if I only understood properties well enough...
-    [self.playButton setImage:newButtonImage forState:UIControlStateNormal];
+- (void)updatePlayButton {
+    
+    if (self.player.isPlaying) {
+#warning I probably shouldn't be creating an image every time
+        UIImage *newButtonImage = [UIImage imageNamed:@"pause.png"];
+        [self.playButton setImage:newButtonImage forState:UIControlStateNormal];
+    } else {
+#warning I probably shouldn't be creating an image every time
+        UIImage *newButtonImage = [UIImage imageNamed:@"play.png"]; // I shouldn't be creating an image every time; this should be a property... if I only understood properties well enough...
+        [self.playButton setImage:newButtonImage forState:UIControlStateNormal];
+    }
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     Album *album = self.player.currentAlbum;
     if (album) {
         return album.totalTracks;
@@ -87,7 +93,8 @@
     }
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailCell_ReuseID"];
     
     NSInteger trackNumber = indexPath.row + 1;
@@ -102,32 +109,50 @@
     
 }
 
+- (IBAction)backButtonPressed:(UIButton *)sender {
+    [self.player previousTrack];
+    
+    [self updateBackButton];
+    [self updateForwardButton];
+}
 
+- (IBAction)forwardButtonPressed:(UIButton *)sender {
+    [self.player nextTrack];
+    
+    [self updateBackButton];
+    [self updateForwardButton];
+}
 
 - (IBAction)playButtonPressed:(UIButton *)sender {
     if (self.player.isPlaying) {
-        [self changePlayButtonToPausedState];
         [self.player pause];
     } else {
-        [self changePlayButtonToPlayState];
         [self.player play];
     }
+    
+    [self updatePlayButton];
+    [self updateForwardButton];
     
     self.isPaused = !self.isPaused;
 }
 
-- (void)setPreviousButtonStateAppropriately {
-    BOOL isNotFirstTrack = !self.player.isFirstTrack;
-    [self.previousButton setEnabled:isNotFirstTrack];
+
+
+- (void)updateBackButton {
+    BOOL stillRoomToBackUp = !self.player.isFirstTrack;
+    [self.backButton setEnabled:stillRoomToBackUp];
 }
 
-- (IBAction)previousButtonPressed:(UIButton *)sender {
-    [self.player previousTrack];
-    [self setPreviousButtonStateAppropriately];
+- (void)updateForwardButton {
+    BOOL stillRoomToGoForward = !self.player.isLastTrack;
+    [self.forwardButton setEnabled:stillRoomToGoForward];
 }
 
-- (IBAction)nextButtonPressed:(UIButton *)sender {
-    [self.player nextTrack];
-    [self setPreviousButtonStateAppropriately];
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    
+    
 }
+
+
 @end

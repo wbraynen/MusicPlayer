@@ -10,7 +10,7 @@
 @import AVFoundation;
 @class Album;
 
-@interface Player : NSObject<AVAudioPlayerDelegate>
+@interface Player : NSObject
 
 //
 // Thep player's public API:
