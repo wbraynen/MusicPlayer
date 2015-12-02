@@ -118,8 +118,8 @@
 		BE8836671C0E9490003CF2C0 /* previous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = previous.png; sourceTree = "<group>"; };
 		BE88366C1C0EC82F003CF2C0 /* thisTrackIsPlaying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thisTrackIsPlaying.png; sourceTree = "<group>"; };
 		BE88366E1C0EDB9F003CF2C0 /* note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note.png; sourceTree = "<group>"; };
-		BE8836721C0EE8F8003CF2C0 /* UIColor+MyColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MyColors.h"; sourceTree = "<group>"; };
-		BE8836731C0EE8F8003CF2C0 /* UIColor+MyColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MyColors.m"; sourceTree = "<group>"; };
+		BE8836721C0EE8F8003CF2C0 /* UIColor+MyColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+MyColors.h"; path = "../UIColor+MyColors.h"; sourceTree = "<group>"; };
+		BE8836731C0EE8F8003CF2C0 /* UIColor+MyColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MyColors.m"; path = "../UIColor+MyColors.m"; sourceTree = "<group>"; };
 		BE8836791C0EEE16003CF2C0 /* note_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note_disabled.png; sourceTree = "<group>"; };
 		BE8E55E31C0AD85D0076CECA /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8E55E71C0AD85D0076CECA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -234,8 +234,6 @@
 		BE8E55DA1C0AD85D0076CECA = {
 			isa = PBXGroup;
 			children = (
-				BE8836721C0EE8F8003CF2C0 /* UIColor+MyColors.h */,
-				BE8836731C0EE8F8003CF2C0 /* UIColor+MyColors.m */,
 				BE8E55E51C0AD85D0076CECA /* MusicPlayer */,
 				BE8E56021C0AD85D0076CECA /* MusicPlayerTests */,
 				BE8E560D1C0AD85D0076CECA /* MusicPlayerUITests */,
@@ -256,6 +254,8 @@
 		BE8E55E51C0AD85D0076CECA /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				BE8836721C0EE8F8003CF2C0 /* UIColor+MyColors.h */,
+				BE8836731C0EE8F8003CF2C0 /* UIColor+MyColors.m */,
 				BE8E55E71C0AD85D0076CECA /* main.m */,
 				BE8E55E91C0AD85D0076CECA /* AppDelegate.h */,
 				BE8E55EA1C0AD85D0076CECA /* AppDelegate.m */,
