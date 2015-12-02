@@ -6,6 +6,8 @@
 //  Copyright © 2015 Will Braynen. All rights reserved.
 //
 
+// Button icons came from here: http://publicdomainvectors.org/en/free-clipart/Vector-drawing-of-monochrome-media-player-buttons/21331.html
+
 #import <UIKit/UIKit.h>
 #import "Player.h"
 @interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>

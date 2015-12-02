@@ -58,7 +58,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        int row = indexPath.row;
+        NSInteger row = indexPath.row;
 
         DetailViewController *detailController = (DetailViewController *)[[segue destinationViewController] topViewController];
         Album *album = self.catalog.albums[row];

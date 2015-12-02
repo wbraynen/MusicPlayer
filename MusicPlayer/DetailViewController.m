@@ -82,8 +82,8 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailCell_ReuseID"];
     
-    int trackNumber = indexPath.row + 1;
-    NSString *trackNumberStr = [NSString stringWithFormat:@"%d", trackNumber];
+    NSInteger trackNumber = indexPath.row + 1;
+    NSString *trackNumberStr = [NSString stringWithFormat:@"%zd", trackNumber];
     [cell.trackNumberButton setTitle:trackNumberStr forState:UIControlStateNormal];
     
     cell.backgroundColor = [UIColor outerSpaceColor];

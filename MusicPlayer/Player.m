@@ -132,7 +132,7 @@
     
     BOOL wasPlaying = self.audioPlayer.isPlaying;
 
-    // it seems silly that I have to re-alloc the player for each new audio file
+    // seems silly to have to re-alloc the player for each new audio file
     self.audioPlayer = [self createAudioPlayerWithAlbum:self.currentAlbum trackNumber:self.currentTrackNumber];
     
     // return the player to playing state if that's how you found it
@@ -154,7 +154,7 @@
     self.currentTrackNumber--;
     BOOL wasPlaying = self.audioPlayer.isPlaying;
     
-    // it seems silly that I have to re-alloc the player for each new audio file
+    // seems silly to have to re-alloc the player for each new audio file
     self.audioPlayer = [self createAudioPlayerWithAlbum:self.currentAlbum trackNumber:self.currentTrackNumber];
     
     // return the player to playing state if that's how you found it
@@ -168,7 +168,8 @@
 
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
-    // play next track -- TODO: create a player class, instantiate the player, and have the player keep track of what album and track it's currently playing (and then increment its current track internally to the player -- this will help avoid global state).
+    
+#warning TODO: This event should be sent to DetailViewController, so that DetailViewController can turn the pause button into a play button.
 }
 
 
