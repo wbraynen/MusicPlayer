@@ -94,6 +94,9 @@
     NSURL *url = [NSURL fileURLWithPath:path];
     newAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
     [newAudioPlayer prepareToPlay];
+    
+    newAudioPlayer.delegate = self.audioPlayer.delegate;
+    
     return newAudioPlayer;
 }
 
