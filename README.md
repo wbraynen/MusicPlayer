@@ -1,6 +1,6 @@
 # MusicPlayer
 
-This is an iPhone app.  It is a specialized music player for experiencing the albums posted at [pianowill.com](pianowill.com).  The idea is that (a) this is just a pet hobby project and (b) because it's a specialized player, it can be more user friendly because it doesn't have to do everything -- just a few things well and intuitively.
+This is an iPhone app and a simple illustration of how to use AVAudioPlayer.  It is a specialized music player for experiencing the albums posted at [pianowill.com](pianowill.com).  The idea is that (a) this is just a pet hobby project and (b) because it's a specialized player, it can be more user friendly because it doesn't have to do everything -- just a few things well and intuitively.
 
 Screenshots of what I have implemented so far:
 
