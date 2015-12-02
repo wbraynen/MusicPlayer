@@ -20,5 +20,3 @@ Why not in Swift, you ask?  Well, wanted to code some stuff for fun in obj-c, bu
 |![image](https://cloud.githubusercontent.com/assets/4765449/11490289/74a0f258-9794-11e5-8046-0a111f5167b5.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11545239/645ad1b4-9903-11e5-9f4b-bcb025805100.png)|![image](https://cloud.githubusercontent.com/assets/4765449/11545238/6459cd78-9903-11e5-933b-e1e67dbe8859.jpg)|
 
 *Back button should be enable even on first track and should rewind to beginning of track, no?
-
-[comment]: <> (https://cloud.githubusercontent.com/assets/4765449/11524488/6fbb4a46-9888-11e5-88ae-c72bf4f1c00b.png)
