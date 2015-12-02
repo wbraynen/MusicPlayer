@@ -7,8 +7,12 @@
 //
 
 #import "DetailViewController.h"
+#import "DetailCell.h"
+
 #import "Album.h"
 #import "Player.h"
+#import <Foundation/Foundation.h> // for NSAssert
+#import "UIColor+MyColors.h"
 
 @interface DetailViewController ()
 
@@ -22,8 +26,13 @@
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
         
+        Album *album = newDetailItem;
+        self.player = [[Player alloc] initWithAlbum:album];
+        
+        self.player.audioPlayer.delegate = self;
+        
         // Update the view
-        //[self configureView];
+        [self configureView];
     }
 }
 
@@ -36,13 +45,21 @@
         
         self.imageview.image = [UIImage imageNamed:album.filenameFor1400image];
         self.isPaused = NO;
+        
+        [self updateBackButton];
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
     [self configureView];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.player.audioPlayer stop];
+    //self.player.audioPlayer = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,25 +68,130 @@
 }
 
 
-- (void)changePlayButtonToPausedState {
-    UIImage *newButtonImage = [UIImage imageNamed:@"play.png"]; // I shouldn't be creating an image every time; this should be a property... if I only understood properties well enough...
-    [self.playButton setImage:newButtonImage forState:UIControlStateNormal];
+- (void)updatePlayButton {
+    
+    if (self.player.isPlaying) {
+#warning I probably shouldn't be creating an image every time
+        UIImage *newButtonImage = [UIImage imageNamed:@"pause.png"];
+        [self.playButton setImage:newButtonImage forState:UIControlStateNormal];
+    } else {
+#warning I probably shouldn't be creating an image every time
+        UIImage *newButtonImage = [UIImage imageNamed:@"play.png"]; // I shouldn't be creating an image every time; this should be a property... if I only understood properties well enough...
+        [self.playButton setImage:newButtonImage forState:UIControlStateNormal];
+    }
 }
 
-- (void)changePlayButtonToPlayState {
-    UIImage *newButtonImage = [UIImage imageNamed:@"pause.png"]; // I shouldn't be creating an image every time; this should be a property... if I only understood properties well enough...
-    [self.playButton setImage:newButtonImage forState:UIControlStateNormal];
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    Album *album = self.player.currentAlbum;
+    if (album) {
+        return album.totalTracks;
+    } else {
+        NSAssert(album, @"The player has no currentAlbum set.");
+        return 0;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailCell_ReuseID"];
+    
+    cell.backgroundColor = [UIColor outerSpaceColor];
+    
+    const NSInteger trackNumber = indexPath.row + 1;
+
+    [cell.trackNumberButton setImage:nil forState:UIControlStateNormal];
+    if (trackNumber == self.player.currentTrackNumber && self.player.isPlaying) {
+        // show icon for current track *if* it's playing
+        UIImage *note = [UIImage imageNamed:@"note.png"];
+        [cell.trackNumberButton setImage:note forState:UIControlStateNormal];
+    } else if (trackNumber == self.player.currentTrackNumber) {
+        // show disabled version of icon if current track is not playing
+        UIImage *disabledNote = [UIImage imageNamed:@"note_disabled.png"];
+        [cell.trackNumberButton setImage:disabledNote forState:UIControlStateNormal];
+    } else {
+        NSString *trackNumberStr = [NSString stringWithFormat:@"%zd", trackNumber];
+        [cell.trackNumberButton setTitle:trackNumberStr forState:UIControlStateNormal];
+    }
+    
+    cell.trackNameLabel.text = self.player.currentAlbum.tracks[indexPath.row];
+
+    cell.trackDurationLabel.text = @"3:54";
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    const NSInteger trackNumber = indexPath.row + 1;
+    [self.player selectTrack:trackNumber];
+    [self.player play];
+    
+    [self updatePlayButton];
+    [self updateBackButton];
+    [self updateForwardButton];
+}
+
+
+- (IBAction)backButtonPressed:(UIButton *)sender {
+    [self.player previousTrack];
+    
+    [self updateBackButton];
+    [self updateForwardButton];
+}
+
+- (IBAction)forwardButtonPressed:(UIButton *)sender {
+    [self.player nextTrack];
+    
+    [self updateBackButton];
+    [self updateForwardButton];
 }
 
 - (IBAction)playButtonPressed:(UIButton *)sender {
-    if (NO == self.isPaused) {
-        [self changePlayButtonToPlayState];
-        [self.player play];
-    } else { // if (YES == self.isPaused)
-        [self changePlayButtonToPausedState];
+    if (self.player.isPlaying) {
         [self.player pause];
+    } else {
+        [self.player play];
     }
+    
+    [self updatePlayButton];
+    [self updateForwardButton];
+    
     self.isPaused = !self.isPaused;
 }
+
+
+
+- (void)updateBackButton {
+    BOOL stillRoomToBackUp = !self.player.isFirstTrack;
+    [self.backButton setEnabled:stillRoomToBackUp];
+    [self updateTableRows];
+}
+
+- (void)updateForwardButton {
+    BOOL stillRoomToGoForward = !self.player.isLastTrack;
+    [self.forwardButton setEnabled:stillRoomToGoForward];
+    [self updateTableRows];
+}
+
+
+- (void)updateTableRows {
+    [self.tableview reloadRowsAtIndexPaths:[self.tableview indexPathsForVisibleRows] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    if (self.player.isLastTrack) {
+        [self updatePlayButton];
+    } else {
+        [self.player nextTrack];
+        [self.player play];
+        
+        [self updateForwardButton];
+        [self updateBackButton];
+    }
+}
+
 
 @end

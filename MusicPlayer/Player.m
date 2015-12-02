@@ -12,78 +12,157 @@
 
 @implementation Player
 
+@synthesize isFirstTrack = _isFirstTrack;
+@synthesize isLastTrack = _isLastTrack;
+@synthesize currentTrackNumber = _currentTrackNumber;
+
+#define AUDIO_FILENAME(trackNumber) [NSString stringWithFormat:@"%@.%zd", self.currentAlbum.filenameBase, trackNumber] // without extension
 
 
-- (instancetype)init {
-    // init vars for table cells
-    Album *slow = [[Album alloc] initWithTitle:@"Slow" year:@"2016" filenameBase:@"slow" totalTracks:9];
-    Album *birdsheart = [[Album alloc] initWithTitle:@"The Bird's Heart" year:@"2015" filenameBase:@"birdsheart" totalTracks:14];
-    Album *valentinevignettes = [[Album alloc] initWithTitle:@"Valentine Vignettes" year:@"2014" filenameBase:@"valentinevignettes" totalTracks:7];
-    Album *pipesanddreams = [[Album alloc] initWithTitle:@"Pipes and Dreams" year:@"2013" filenameBase:@"pipesanddreams" totalTracks:8];
-    Album *awaketooearly = [[Album alloc] initWithTitle:@"Awake Too Early" year:@"2012" filenameBase:@"awaketooearly" totalTracks:9];
-    self.albums = @[ slow, birdsheart, valentinevignettes, pipesanddreams, awaketooearly ];
+
+- (instancetype)initWithAlbum:(Album *)album {
+    
+    _currentAlbum = album;
+    _currentTrackIndex = 0;
+    _audioPlayer = [self createAudioPlayerWithAlbum:album trackNumber:_currentTrackIndex+1];
     
     return self;
 }
 
-- (void)playFile:(NSString *)filename {
+
+
+- (BOOL) isFirstTrack {
+    return (0 == self.currentTrackIndex);
+}
+
+- (BOOL) isLastTrack {
+    return (self.currentAlbum.totalTracks-1 == self.currentTrackIndex);
+}
+
+- (BOOL) isPlaying {
+    return self.audioPlayer.isPlaying;
+}
+
+- (BOOL) isPaused {
+    const float currenTimeInSeconds = self.audioPlayer.currentTime;
+    return currenTimeInSeconds > 0.0f;
+}
+
+- (BOOL) isStopped {
+    const float currenTimeInSeconds = self.audioPlayer.currentTime;
+    return (currenTimeInSeconds == self.audioPlayer.currentTime);
+}
+
+
+- (NSString *) getFilenameForAlbum:(Album *)album trackNumber:(NSUInteger)trackNumber {
+    return AUDIO_FILENAME(trackNumber);
+}
+
+
+- (void)setCurrentAlbum:(Album *)album {
+    self.currentAlbum = album;
+}
+
+
+
+//
+// Getters and setters for self.currentTrackNumber
+//
+
+- (NSUInteger)currentTrackNumber {
+    return self.currentTrackIndex + 1;
+}
+
+- (void)setCurrentTrackNumber:(NSUInteger)trackNumber {
+    self.currentTrackIndex = trackNumber - 1;
+}
+
+
+
+- (AVAudioPlayer *)createAudioPlayerWithAlbum:(Album *)album trackNumber:(NSUInteger)trackNumber {
+    
+    NSString *filename = [self getFilenameForAlbum:album trackNumber:trackNumber];
+    
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *path = [bundle pathForResource:filename ofType:@"mp3"];
+    NSAssert (path, @"Couldn't locate file %@.mp3", filename);
+    if (!path) {
+        return nil;
+    }
     
-    if (path != nil) {
-        AVAudioPlayer *newPlayer;
-        NSURL *url = [NSURL fileURLWithPath:path];
-        newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
-        self.player = newPlayer;
-        
-        [newPlayer prepareToPlay];
-        [newPlayer play];
-    }
+    AVAudioPlayer *newAudioPlayer;
+    NSURL *url = [NSURL fileURLWithPath:path];
+    newAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
+    [newAudioPlayer prepareToPlay];
+    return newAudioPlayer;
 }
-
-
-- (NSUInteger)getTotalAlbums {
-    return self.albums.count;
-}
-
-
-- (Album *)getCurrentAlbum {
-    return self.currentAlbum;
-}
-
-/**
- * Preq: 0 <= index < albums.count
- * Otherwise, no biggy: next time you call `getCurrentAlbum`, it will simply return nil
- */
-- (void)setCurrentAlbumByIndex:(NSUInteger)index {
-    if (index < self.albums.count) {
-        self.currentAlbum = self.albums[index];
-    } else {
-        self.currentAlbum = nil;
-    }
-}
-
-
 
 - (void)pause {
-    [self.player pause];
+    [self.audioPlayer pause];
 }
 
-- (void)play {
-    Album *album = [self getCurrentAlbum];
-    NSString *filename = [album getAudioFilenameForTrackWithoutExtension:self.currentTrack];
-    [self playFile:filename];
+- (void)play { // or resume
+    [self.audioPlayer play];
 }
 
-- (void)playNextTrack {
-    if (self.currentTrack < self.currentAlbum.totalTracks - 1) {
-        self.currentTrack++;
-        // call playFile
+
+- (void)selectTrack:(NSUInteger)trackNumber {
+    NSInteger trackIndex = trackNumber - 1;
+    if (!self.currentAlbum || trackIndex < 0 || trackIndex >= self.currentAlbum.totalTracks) {
+        NSAssert( false, @"trackNumber is outside range" );
+#warning Should probably instead throw an error or exception; which is better here?
+        return;
     }
+        
+    self.currentTrackIndex = trackIndex;
+    self.audioPlayer = [self createAudioPlayerWithAlbum:self.currentAlbum trackNumber:trackNumber];
 }
 
-- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
-    // play next track -- TODO: create a player class, instantiate the player, and have the player keep track of what album and track it's currently playing (and then increment its current track internally to the player -- this will help avoid global state).
+
+////
+// Returns the new track number (not index, *number*)
+//
+- (NSUInteger)nextTrack {
+    
+    if (self.isLastTrack) {
+        return self.currentTrackNumber;
+    }
+    
+    self.currentTrackIndex++;
+    
+    BOOL wasPlaying = self.audioPlayer.isPlaying;
+
+    // seems silly to have to re-alloc the player for each new audio file
+    self.audioPlayer = [self createAudioPlayerWithAlbum:self.currentAlbum trackNumber:self.currentTrackNumber];
+    
+    // return the player to playing state if that's how you found it
+    if (wasPlaying) {
+        [self.audioPlayer play];
+    }
+    return self.currentTrackNumber;
+}
+
+////
+// Returns the new track number (not index, *number*)
+//
+- (NSUInteger)previousTrack {
+
+    if (self.isFirstTrack) {
+        return self.currentTrackNumber;
+    }
+    
+    self.currentTrackNumber--;
+    BOOL wasPlaying = self.audioPlayer.isPlaying;
+    
+    // seems silly to have to re-alloc the player for each new audio file
+    self.audioPlayer = [self createAudioPlayerWithAlbum:self.currentAlbum trackNumber:self.currentTrackNumber];
+    
+    // return the player to playing state if that's how you found it
+    if (wasPlaying) {
+        [self.audioPlayer play];
+    }
+
+    return self.currentTrackNumber;
 }
 
 

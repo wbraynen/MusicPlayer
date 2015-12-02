@@ -10,9 +10,11 @@
 
 @interface Album : NSObject
 
+@property (readonly, nonatomic) NSUInteger totalTracks;
+
 @property (readonly, nonatomic) NSString *year;
 @property (readonly, nonatomic) NSString *title;
-@property (readonly, nonatomic) NSUInteger totalTracks;
+@property (readonly, nonatomic) NSArray *tracks;
 
 @property (readonly, nonatomic) NSString *filenameFor100image;
 @property (readonly, nonatomic) NSString *filenameFor375image;
@@ -20,7 +22,6 @@
 
 @property (readonly, nonatomic) NSString *filenameBase;
 
--(instancetype)initWithTitle:(NSString *)title year:(NSString *)year filenameBase:(NSString *)filenameBase totalTracks:(NSUInteger)totalTracks;
--(NSString *)getAudioFilenameForTrackWithoutExtension:(NSUInteger)track; // track 0 is the first track (and so self.totalTracks-1 is the last track).
+- (instancetype)initWithTitle:(NSString *)title year:(NSString *)year filenameBase:(NSString *)filenameBase;
 
 @end

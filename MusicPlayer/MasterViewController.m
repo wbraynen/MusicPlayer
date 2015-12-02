@@ -10,7 +10,7 @@
 #import "DetailViewController.h"
 #import "MasterCell.h"
 #import "Album.h"
-#import "Player.h"
+#import "Catalog.h"
 
 @interface MasterViewController ()
 
@@ -31,7 +31,7 @@
     //[self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     
     self.view.backgroundColor = [UIColor blackColor]; //"#145b7c"
-    self.player = [[Player alloc] init];
+    self.catalog = [[Catalog alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -58,16 +58,16 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        
-        [self.player setCurrentAlbumByIndex:indexPath.row];
-        Album *album = [self.player getCurrentAlbum];
+        NSInteger row = indexPath.row;
+
+        DetailViewController *detailController = (DetailViewController *)[[segue destinationViewController] topViewController];
+        Album *album = self.catalog.albums[row];
         if (album) {
-            DetailViewController *detailController = (DetailViewController *)[[segue destinationViewController] topViewController];
-            detailController.player = self.player;
             [detailController setDetailItem:album];
-            detailController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-            detailController.navigationItem.leftItemsSupplementBackButton = YES;
         }
+    
+        detailController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+        detailController.navigationItem.leftItemsSupplementBackButton = YES;
     }
 }
 
@@ -78,14 +78,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.player getTotalAlbums];
+    return self.catalog.totalAlbums;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MasterCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MasterCell_ID" forIndexPath:indexPath];
+    MasterCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MasterCell_ReuseID" forIndexPath:indexPath];
     
     // Configure the cell...
-    Album *album = self.player.albums[indexPath.row];
+    Album *album = self.catalog.albums[indexPath.row];
 
     cell.littleText.text = album.title;
     cell.bigText.text = album.year;

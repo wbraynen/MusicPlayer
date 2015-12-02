@@ -10,23 +10,37 @@
 @import AVFoundation;
 @class Album;
 
-@interface Player : NSObject<AVAudioPlayerDelegate>
+@interface Player : NSObject
 
+//
+// Thep player's public API:
+//
+- (instancetype)initWithAlbum:(Album *)album;
 
-@property (strong, nonatomic) NSArray *albums;
-@property (strong, nonatomic) Album *currentAlbum;
-@property (readwrite, atomic) NSUInteger currentTrack;
-
-@property (strong, nonatomic) AVAudioPlayer *player;
-
-- (void)playNextTrack;
-- (void)playFile:(NSString *)filename;
-- (NSUInteger)getTotalAlbums;
-
-- (Album *)getCurrentAlbum;
-- (void)setCurrentAlbumByIndex:(NSUInteger)index; // 0 <= index < albums.count, unless there is no current album
-
-- (void)play;
 - (void)pause;
+- (void)play;
+
+- (void)selectTrack:(NSUInteger)trackNumber;
+- (NSUInteger)nextTrack;
+- (NSUInteger)previousTrack;
+
+@property (readonly, nonatomic) BOOL isPlaying;
+@property (readonly, nonatomic) BOOL isPaused;
+@property (readonly, nonatomic) BOOL isStopped;
+
+@property (strong, nonatomic) Album *currentAlbum;
+@property (readonly, nonatomic) NSUInteger currentTrackNumber;
+@property (readwrite, nonatomic) BOOL isFirstTrack;
+@property (readwrite, nonatomic) BOOL isLastTrack;
+
+
+//
+// For internal use:
+//
+#warning Does obj-c have a concept of private or protected properties?
+@property (readwrite, atomic) NSUInteger currentTrackIndex;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+
+
 
 @end
