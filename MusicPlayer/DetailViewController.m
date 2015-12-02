@@ -150,8 +150,15 @@
 
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
-    [self updatePlayButton];
-    [self updateForwardButton];
+    if (self.player.isLastTrack) {
+        [self updatePlayButton];
+    } else {
+        [self.player nextTrack];
+        [self.player play];
+        
+        [self updateForwardButton];
+        [self updateBackButton];
+    }
 }
 
 
