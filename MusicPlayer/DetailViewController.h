@@ -30,4 +30,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag;
+
 @end

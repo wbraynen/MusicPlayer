@@ -150,8 +150,8 @@
 
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
-    
-    
+    [self updatePlayButton];
+    [self updateForwardButton];
 }
 
 
