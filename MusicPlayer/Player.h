@@ -20,7 +20,7 @@
 - (void)pause;
 - (void)play;
 
-- (void)moveToTrackNumber:(NSUInteger)trackNumber;
+- (void)selectTrack:(NSUInteger)trackNumber;
 - (NSUInteger)nextTrack;
 - (NSUInteger)previousTrack;
 

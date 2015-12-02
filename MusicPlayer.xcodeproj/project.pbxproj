@@ -14,6 +14,9 @@
 		BE88366A1C0E9490003CF2C0 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8836661C0E9490003CF2C0 /* play.png */; };
 		BE88366B1C0E9490003CF2C0 /* previous.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8836671C0E9490003CF2C0 /* previous.png */; };
 		BE88366D1C0EC82F003CF2C0 /* thisTrackIsPlaying.png in Resources */ = {isa = PBXBuildFile; fileRef = BE88366C1C0EC82F003CF2C0 /* thisTrackIsPlaying.png */; };
+		BE88366F1C0EDB9F003CF2C0 /* note.png in Resources */ = {isa = PBXBuildFile; fileRef = BE88366E1C0EDB9F003CF2C0 /* note.png */; };
+		BE8836741C0EE8F8003CF2C0 /* UIColor+MyColors.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8836731C0EE8F8003CF2C0 /* UIColor+MyColors.m */; };
+		BE88367A1C0EEE16003CF2C0 /* note_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8836791C0EEE16003CF2C0 /* note_disabled.png */; };
 		BE8E55E81C0AD85D0076CECA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8E55E71C0AD85D0076CECA /* main.m */; };
 		BE8E55EB1C0AD85D0076CECA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8E55EA1C0AD85D0076CECA /* AppDelegate.m */; };
 		BE8E55EE1C0AD85D0076CECA /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8E55ED1C0AD85D0076CECA /* MasterViewController.m */; };
@@ -114,6 +117,10 @@
 		BE8836661C0E9490003CF2C0 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		BE8836671C0E9490003CF2C0 /* previous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = previous.png; sourceTree = "<group>"; };
 		BE88366C1C0EC82F003CF2C0 /* thisTrackIsPlaying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thisTrackIsPlaying.png; sourceTree = "<group>"; };
+		BE88366E1C0EDB9F003CF2C0 /* note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note.png; sourceTree = "<group>"; };
+		BE8836721C0EE8F8003CF2C0 /* UIColor+MyColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MyColors.h"; sourceTree = "<group>"; };
+		BE8836731C0EE8F8003CF2C0 /* UIColor+MyColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MyColors.m"; sourceTree = "<group>"; };
+		BE8836791C0EEE16003CF2C0 /* note_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note_disabled.png; sourceTree = "<group>"; };
 		BE8E55E31C0AD85D0076CECA /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8E55E71C0AD85D0076CECA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE8E55E91C0AD85D0076CECA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -227,6 +234,8 @@
 		BE8E55DA1C0AD85D0076CECA = {
 			isa = PBXGroup;
 			children = (
+				BE8836721C0EE8F8003CF2C0 /* UIColor+MyColors.h */,
+				BE8836731C0EE8F8003CF2C0 /* UIColor+MyColors.m */,
 				BE8E55E51C0AD85D0076CECA /* MusicPlayer */,
 				BE8E56021C0AD85D0076CECA /* MusicPlayerTests */,
 				BE8E560D1C0AD85D0076CECA /* MusicPlayerUITests */,
@@ -276,6 +285,8 @@
 				BE8836651C0E9490003CF2C0 /* pause.png */,
 				BE8836661C0E9490003CF2C0 /* play.png */,
 				BE8836671C0E9490003CF2C0 /* previous.png */,
+				BE8836791C0EEE16003CF2C0 /* note_disabled.png */,
+				BE88366E1C0EDB9F003CF2C0 /* note.png */,
 				BE88366C1C0EC82F003CF2C0 /* thisTrackIsPlaying.png */,
 			);
 			name = "Supporting Files";
@@ -574,6 +585,7 @@
 				BE8E56C71C0C11340076CECA /* valentinevignettes.6.mp3 in Resources */,
 				BE8E563C1C0AD8E30076CECA /* valentinevignettes.100.jpg in Resources */,
 				BE8E568D1C0C0C1A0076CECA /* birdsheart.11.mp3 in Resources */,
+				BE88366F1C0EDB9F003CF2C0 /* note.png in Resources */,
 				BE8E563A1C0AD8E30076CECA /* pipesanddreams.100.jpg in Resources */,
 				BE8E56891C0C0C1A0076CECA /* birdsheart.7.mp3 in Resources */,
 				BE8E56321C0AD8920076CECA /* slow.9.mp3 in Resources */,
@@ -616,6 +628,7 @@
 				BE8E56971C0C0ECF0076CECA /* birdsheart.8.mp3 in Resources */,
 				BE8E56311C0AD8920076CECA /* slow.8.mp3 in Resources */,
 				BE8E56851C0C0C1A0076CECA /* birdsheart.3.mp3 in Resources */,
+				BE88367A1C0EEE16003CF2C0 /* note_disabled.png in Resources */,
 				BE8E564A1C0B5A6D0076CECA /* slow.375.jpg in Resources */,
 				BE8E56C61C0C11340076CECA /* valentinevignettes.5.mp3 in Resources */,
 				BE8E56981C0C0ECF0076CECA /* birdsheart.9.mp3 in Resources */,
@@ -657,6 +670,7 @@
 				BE8E55EE1C0AD85D0076CECA /* MasterViewController.m in Sources */,
 				BE8836631C0E7597003CF2C0 /* Catalog.m in Sources */,
 				BE8E564F1C0B65910076CECA /* Album.m in Sources */,
+				BE8836741C0EE8F8003CF2C0 /* UIColor+MyColors.m in Sources */,
 				BE8E55E81C0AD85D0076CECA /* main.m in Sources */,
 				BE88365B1C0D0CD9003CF2C0 /* DetailCell.m in Sources */,
 				BE8E56731C0BFBCB0076CECA /* Player.m in Sources */,

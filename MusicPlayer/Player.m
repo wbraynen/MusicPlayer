@@ -106,7 +106,7 @@
 }
 
 
-- (void)moveToTrackNumber:(NSUInteger)trackNumber {
+- (void)selectTrack:(NSUInteger)trackNumber {
     NSInteger trackIndex = trackNumber - 1;
     if (!self.currentAlbum || trackIndex < 0 || trackIndex >= self.currentAlbum.totalTracks) {
         NSAssert( false, @"trackNumber is outside range" );

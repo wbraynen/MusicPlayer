@@ -12,6 +12,7 @@
 #import "Album.h"
 #import "Player.h"
 #import <Foundation/Foundation.h> // for NSAssert
+#import "UIColor+MyColors.h"
 
 @interface DetailViewController ()
 
@@ -96,15 +97,20 @@
     
     DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailCell_ReuseID"];
     
-    const NSInteger trackNumber = indexPath.row + 1;
+    cell.backgroundColor = [UIColor outerSpaceColor];
     
-    if (trackNumber == self.player.currentTrackNumber) {
-        // show icon for current track
-        UIImage *image = [UIImage imageNamed:@"thisTrackIsPlaying.png"];
-        [cell.trackNumberButton setImage:image forState:UIControlStateNormal];
+    const NSInteger trackNumber = indexPath.row + 1;
+
+    [cell.trackNumberButton setImage:nil forState:UIControlStateNormal];
+    if (trackNumber == self.player.currentTrackNumber && self.player.isPlaying) {
+        // show icon for current track *if* it's playing
+        UIImage *note = [UIImage imageNamed:@"note.png"];
+        [cell.trackNumberButton setImage:note forState:UIControlStateNormal];
+    } else if (trackNumber == self.player.currentTrackNumber) {
+        // show disabled version of icon if current track is not playing
+        UIImage *disabledNote = [UIImage imageNamed:@"note_disabled.png"];
+        [cell.trackNumberButton setImage:disabledNote forState:UIControlStateNormal];
     } else {
-        // show track number for all other tracks
-        [cell.trackNumberButton setImage:nil forState:UIControlStateNormal];
         NSString *trackNumberStr = [NSString stringWithFormat:@"%zd", trackNumber];
         [cell.trackNumberButton setTitle:trackNumberStr forState:UIControlStateNormal];
     }
@@ -114,8 +120,19 @@
     cell.trackDurationLabel.text = @"3:54";
     
     return cell;
-    
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    const NSInteger trackNumber = indexPath.row + 1;
+    [self.player selectTrack:trackNumber];
+    [self.player play];
+    
+    [self updatePlayButton];
+    [self updateBackButton];
+    [self updateForwardButton];
+}
+
 
 - (IBAction)backButtonPressed:(UIButton *)sender {
     [self.player previousTrack];
