@@ -1,6 +1,6 @@
 # MusicPlayer
 
-This is an iPhone app.  It is a specialized music player for experiencing the albums posted at [pianowill.com](pianowill.com).  The idea is that (a) this is just a pet hobby project and (b) because it's a specialized player, it can be more user friendly because it doesn't have to do everything -- just a few things well and intuitively :)
+This is an iPhone app.  It is a specialized music player for experiencing the albums posted at [pianowill.com](pianowill.com).  The idea is that (a) this is just a pet hobby project and (b) because it's a specialized player, it can be more user friendly because it doesn't have to do everything -- just a few things well and intuitively :).
 
 The plan is to start with a mocked-up but functional player and then build on that.  For example, serve up hardcoded data, then add a CoreData store, then add http with my own node.js server (just like the one my lighthouse-api.org project uses); or just use RestKit instead of AFNetworking from the get go.
 
