@@ -128,7 +128,7 @@
     // seems silly to have to re-alloc the player for each new audio file
     self.audioPlayer = [self createAudioPlayerWithAlbum:self.currentAlbum trackNumber:self.currentTrackNumber];
     
-    // return the player to playing state if that's how you found it
+    // restore the player's previous state
     if (wasPlaying) {
         [self.audioPlayer play];
     }
@@ -150,7 +150,7 @@
     // seems silly to have to re-alloc the player for each new audio file
     self.audioPlayer = [self createAudioPlayerWithAlbum:self.currentAlbum trackNumber:self.currentTrackNumber];
     
-    // return the player to playing state if that's how you found it
+    // restore the player's previous state
     if (wasPlaying) {
         [self.audioPlayer play];
     }
