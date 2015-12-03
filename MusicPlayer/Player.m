@@ -45,16 +45,12 @@
 
 - (BOOL) isPaused {
     const float currenTimeInSeconds = self.audioPlayer.currentTime;
-    return currenTimeInSeconds > 0.0f;
-}
-
-- (BOOL) isStopped {
-    const float currenTimeInSeconds = self.audioPlayer.currentTime;
-    return (currenTimeInSeconds == self.audioPlayer.currentTime);
+    return (!self.audioPlayer.isPlaying && currenTimeInSeconds > 0.0f);
 }
 
 
 - (NSString *) getFilenameForAlbum:(Album *)album trackNumber:(NSUInteger)trackNumber {
+#warning Fix this: album is being passed in, but not used.
     return AUDIO_FILENAME(trackNumber);
 }
 
