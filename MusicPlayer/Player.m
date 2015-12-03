@@ -55,12 +55,6 @@
 }
 
 
-- (void)setCurrentAlbum:(Album *)album {
-    self.currentAlbum = album;
-}
-
-
-
 //
 // Getters and setters for self.currentTrackNumber
 //
