@@ -40,7 +40,7 @@
 
 - (NSArray *) fetchTracksFor:(NSString *)albumTitle {
     
-#warning Mocked this up by hardcoding it. The next step, however, is to make a REST API from which album info can be downloaded and stored in CoreData on disk.  Plan to use AFNetworking or RestKit for that.  (RestKit might kill two birds: would take care of CoreData.)
+#warning Mocked this up by hardcoding it. This is supposed to be ugly and inefficient -- an eyesore to be removed later (or else I might lack the motivation).  The next step, however, is to make a REST API from which album info can be downloaded and stored in CoreData on disk.  Plan to use AFNetworking or RestKit for that.  (RestKit might kill two birds: would take care of CoreData.)
     
     NSArray *slowTracks = @[@"It's Hard To Hear",
                             @"I'm Grillin My Meat And There Is Enough For Two",

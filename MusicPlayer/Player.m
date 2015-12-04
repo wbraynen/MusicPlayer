@@ -45,24 +45,14 @@
 
 - (BOOL) isPaused {
     const float currenTimeInSeconds = self.audioPlayer.currentTime;
-    return currenTimeInSeconds > 0.0f;
-}
-
-- (BOOL) isStopped {
-    const float currenTimeInSeconds = self.audioPlayer.currentTime;
-    return (currenTimeInSeconds == self.audioPlayer.currentTime);
+    return (!self.audioPlayer.isPlaying && currenTimeInSeconds > 0.0f);
 }
 
 
 - (NSString *) getFilenameForAlbum:(Album *)album trackNumber:(NSUInteger)trackNumber {
+#warning Fix this: album is being passed in, but not used.
     return AUDIO_FILENAME(trackNumber);
 }
-
-
-- (void)setCurrentAlbum:(Album *)album {
-    self.currentAlbum = album;
-}
-
 
 
 //
@@ -138,7 +128,7 @@
     // seems silly to have to re-alloc the player for each new audio file
     self.audioPlayer = [self createAudioPlayerWithAlbum:self.currentAlbum trackNumber:self.currentTrackNumber];
     
-    // return the player to playing state if that's how you found it
+    // restore the player's previous state
     if (wasPlaying) {
         [self.audioPlayer play];
     }
@@ -160,7 +150,7 @@
     // seems silly to have to re-alloc the player for each new audio file
     self.audioPlayer = [self createAudioPlayerWithAlbum:self.currentAlbum trackNumber:self.currentTrackNumber];
     
-    // return the player to playing state if that's how you found it
+    // restore the player's previous state
     if (wasPlaying) {
         [self.audioPlayer play];
     }
