@@ -1,6 +1,8 @@
+NB: This project has been ported from Objective C to Swift, so all new development now happens here: [SwiftMusicPlayer](https://github.com/wbraynen/SwiftMusicPlayer).
+
 # MusicPlayer
 
-This project has been ported from Objective C to Swift, so all new development now happens here: [SwiftMusicPlayer](https://github.com/wbraynen/SwiftMusicPlayer).
+An mp3 player written in Swift for playing and viewing the artwork of best albums from [pianowill.com](http://pianowill.com), online or offline.  Uses AVAudioPlayer.
 
 Screenshots of what's implemented in this obj-c repo:
 
