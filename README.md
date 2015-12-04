@@ -1,6 +1,6 @@
 # MusicPlayer
 
-This project has been ported from Objective C to Swift, so all new development now happens here: github/wbraynen/SwiftMusicPlayer
+This project has been ported from Objective C to Swift, so all new development now happens here: [SwiftMusicPlayer](https://github.com/wbraynen/SwiftMusicPlayer).
 
 Screenshots of what's implemented in this obj-c repo:
 
